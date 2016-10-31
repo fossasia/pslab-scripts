@@ -1,0 +1,8 @@
+@media (max-width: 767px) /* @grid-float-breakpoint -1 */
+{
+  .navbar-custom
+  {
+    position: fixed;
+    top: auto;
+  }
+}
