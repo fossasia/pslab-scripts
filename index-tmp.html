@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pocket Science Lab">
+  <meta name="keywords" content="PSLab, Pocket Science Lab, Python Powered Science Lab, ExpEYES, FOSSASIA PSLab">
+  <meta name="author" content="">
+
+  <title>Pocket Science Lab</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Theme CSS -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link href="css/custom.css" rel="stylesheet">
+
+  
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-custom navbar-static-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header navbar-static-top page-scroll">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="sr-only">Toggle navigation</span>
+			Menu <i class="fa fa-bars"></i>
+			</button>
+			
+		</div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+			<li>
+				<a href="index.html">Home</a>
+			</li>
+			<li>
+				<a href="#features">Features</a>
+			</li>
+			<li>
+				<a href="#installation">Installation</a>
+			</li>
+			<li>
+				<a href="#communication">Hardware communication</a>
+			</li>
+			<li>
+				<a href="#design">Design your own experiment</a>
+			</li>
+			<li>
+				<a href="developers.html">Developers & Mentors</a>
+			</li>
+			<li>
+				<a href="https://github.com/fossasia/pslab/raw/development/docs/pslab-schematics.pdf"target="blank">PSLab-Schematics</a>
+			</li>
+			<li>
+				<a href="http://fossasia.org" target="_blank">FOSSASIA</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  <!-- Page Header -->
+  <!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: linear-gradient(120deg, #9C0000, #FF5733); ">
+	<div class="container">
+      <div class="row">
+			<div class="col-lg-12 col-md-10 ">
+				<div class="site-heading">
+           			<img src="" height="" alt="">
+					<h1>PSLab - Pocket Science Lab</h1>
+					<hr class="small">
+					<center>
+					<span class="subheading">Python Powered Open Source Science Lab from FOSSASIA</span>
+					</center>
+					<br>
+           			<a href="https://github.com/fossasia/pslab" target="_blank" class="btn">PSLab Repo on Github</a>
+					<a href="https://github.com/fossasia/pslab-apps" target="_blank" class="btn">PSLab-apps Repo</a>
+					<a href="http://wavicles.github.io/" target="_blank" class="btn">GSoC-16 Project</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="post-preview">
+        <h1 class="page-header"> <font color="#333333">PSLab</font> 
+                    <small> - Pocket Science Lab</small>
+		</h1>
+       <p>PSLab  is a new addition to FOSSASIA Science Lab. This tiny pocket lab  provides  an array of necessary equipments for doing science and engineering experiments. It can function like an oscilloscope, waveform generator, frequency counter, programmable voltage and current source and also as a data logger.</p>
+       <p>The project is inspired from <a href="http://expeyes.in">ExpEYES</a></p>
+       
+      <div class="col-lg-6 col-sm-6 text-center">
+            <figure>
+				<img class="" src="img/pslabdesign.png" alt="">
+				<figcaption><font color="#8B7878">New Front Panel Design</font></figcaption>
+			</figure>  
+      </div>
+          <div class="col-lg-6 col-sm-6 text-center">
+			<figure>
+				<img class="" src="img/psl2.jpg" alt="">
+				<figcaption><font color="#8B7878">Size:62mmx78mmx13mm</font></figcaption>
+			</figure> 
+		</div>
+		
+	
+		<br>
+       <p>The control and measurement functions are written in Python programming language. Pyqtgraph is used for plotting library. A variety of experiments can be performed using GUI applications written in python. PSLab is interfaced and powered by USB port of the computer.</p>
+      <hr>
+      
+       <div class="post-preview">
+        <h1 id='features' class="page-header"> <font color="#333333">Features of PSLab</font> 
+                    <small> - Various control and measurement tools</small>
+		</h1>
+		<p>PSLab is equipped with array of useful control and measurement tools. This tiny but powerful Pocket Science Lab enables you to perform various experiments and study a wide range of phenomena.</p>
+
+		<p>Some of the important applications of PSLab are mentioned below...</p>
+
+		<div class="row">
+                        <div class="col-sm-6">
+                            <ul> <font color = "#8F939F">
+                                <li>4-Channel, up to 2MSPS Oscilloscope</li>
+                                <li>12-bit Voltmeter. Programmable gain. Input ranges from +/-10mV to +/-16V</li>
+                                <li>3x 12-bit Programmable voltage sources/ +/-3.3V,+/-5V,0-3V </li>
+                                <li>12-bit Programmable current source. 0-3.3mA</li>
+                                <li>Supports Advanced Plugins/Add-on Modules</li>
+                            </font>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <ul><font color = "#8F939F">						
+                                <li>4-Channel, 4MHz, 15nS Logic Analyzer</li>
+                                <li> 2x sine wave generators. 5Hz to 5KHz. Manual amplitude control</li>
+                                <li>4x PWM generators. 15nS resolution. Up to 8MHz</li>
+                                <li>Capacitance Measurement. pF to uF range</li>
+                                <li>I2C, SPI , UART data buses for Accel/gyros/humidity/temperature modules etc</li>
+                               </font>
+							</ul>
+						</div>
+          <p>Python based communication library and experiment specific PyQt4 based GUI’s make PSLab a must have tool for programmers, hobbyists, science and engineering teachers and also students.  </p>
+          <a href="http://blog.fossasia.org/features-and-controls-of-pocket-science-lab/" target="blank"> <font color="#e12b00"> Learn More...</font></a>
+    
+        <hr>
+        
+       <div class="post-preview">
+			<h1 class="page-header"> <font color="#333333">PSLab Code Repositories</font> 
+                    <small> - ........</small>
+			</h1>
+		</div>
+          <P>The following are the code repositories of PSLab.</P>
+            <ul>
+				<li><span style="color: #e12b00;"><a style="color: #e12b00;" href="https://github.com/fossasia/fossasia-pslab" target="_blank">https://github.com/fossasia/pslab</a> </span> : This repository hosts the Communication library for  PSLab.</li>
+			</ul>
+			<ul>
+				<li><span style="color: #e12b00;"><a style="color: #e12b00;" href="https://github.com/fossasia/fossasia-pslab-apps" target="_blank">https://github.com/fossasia/pslab-apps</a>  </span>: This repository is for Qt based GUI programs, widgets and templates for various experiments.</li>
+			</ul>
+		<hr>
+		
+		<div class="post-preview">
+			<h1 id='installation' class="page-header"> <font color="#333333">Installation </font> 
+                    <small> How to install pslab from source?</small></h1>	
+			
+			<p>To install PSLab on Debian based Gnu/Linux system, the following dependencies must be installed.
+		</div>
+
+			<pre><strong><span style="color: #333333;">Dependencies</span></strong>
+			============
+			PyQt 4.7+, PySide, or PyQt5
+			python 2.6, 2.7, or 3.x
+			NumPy, Scipy
+			pyqt4-dev-tools          #for pyuic4
+			Pyqtgraph                #Plotting library
+			pyopengl and qt-opengl   #for 3D graphics
+			iPython-qtconsole        #optional</pre>
+	
+			<p>Now clone both the repositories <span style="color: #e12b00;"><a style="color: #e12b00;" href="https://github.com/wavicles/fossasia-pslab-apps" target="_blank">pslab-apps</a></span> and <span style="color: #e12b00;"><a style="color: #e12b00;" href="https://github.com/wavicles/fossasia-pslab" target="_blank">pslab</a></span> </p>
+
+
+			Libraries must be installed in the following order
+			<p style="padding-left: 120px;">1. pslab-apps</p>
+			<p style="padding-left: 120px;">2. pslab</p>
+			To install, cd into the directories
+			<pre class="plain-readme">$ cd &lt;SOURCE_DIR&gt;</pre>
+			and run the following (for both the repos)
+			<pre class="plain-readme">$ sudo make clean</pre>
+			<pre class="plain-readme">$ sudo make </pre>
+			<pre class="plain-readme">$ sudo make install</pre>
+			Now you are ready with the PSLab software on your machine :)
+
+			For the main GUI (Control panel), you can run <em>Experiments</em> from the terminal.
+			<pre class="plain-readme">$ Experiments</pre>
+			
+			<a href="http://blog.fossasia.org/pslab-code-repository-and-installation/" target="blank"><font color="#e12b00"> Read More...</font></a>
+			
+		</div>
+		<hr>
+		
+	<div class="post-preview">
+			<h1 id='communication' class="page-header"> <font color="#333333">Communicating with PSLab </font> 
+                    <small> Getting started...</small></h1>	
+					
+		
+		<p>Connecting to PSLab is as simple and straight forward as this...</p>
+		<pre><span style="color: #808080;">&gt;&gt;&gt; from PSL import sciencelab
+&gt;&gt;&gt; I = sciencelab.connect()     <span style="color: #666699;">#Returns None if device isn't found</span>
+<span style="color: #666699;"># An example function that measures voltage present at the specified analog input</span>
+&gt;&gt;&gt; print I.get_average_voltage('CH1')</span></pre>
+		
+		<p>Various sensors can be connected to PSLab and data can be fetched with a simple python code as shown below...</p>
+		<pre class="western"><span style="color: #808080;">&gt;&gt;&gt; from PSL.SENSORS import HMC5883L <span style="color: #666699;">#A 3-axis magnetometer</span>
+&gt;&gt;&gt; M = HMC5883L.connect()
+&gt;&gt;&gt; Gx,Gy,Gz = M.getRaw()
+		</span></pre>
+		
+		<h4>Example 1: Capturing and plotting a sine wave</h4>
+		Connect WG1 to CH1 and run the following code.
+			<pre><span style="color: #808080;">			&gt;&gt;&gt; from pylab import *
+			&gt;&gt;&gt; from PSL import sciencelab
+			&gt;&gt;&gt; I=sciencelab.connect()
+			&gt;&gt;&gt; I.set_gain('CH1', 3) <span style="color: #666699;"># set input CH1 to +/-4V range</span>
+			&gt;&gt;&gt; I.set_sine1(1000) <span style="color: #666699;"># generate 1kHz sine wave on output W1</span>
+			&gt;&gt;&gt; x,y = I.capture1('CH1', 1000, 10) <span style="color: #666699;"># digitize CH1 1000 times, with 10 usec interval</span>
+			&gt;&gt;&gt; plot(x,y)
+			&gt;&gt;&gt; show()</span></pre>
+
+The output of the program is here...
+<img class="aligncenter wp-image-3110 size-medium" src="http://blog.fossasia.org/wp-content/uploads/2016/08/sine1-750x565.png" alt="sine1" width="300" height="200" />		
+<a href="http://blog.fossasia.org/communicating-with-pocket-science-lab-via-usb-and-capturing-and-plotting-sine-waves/" target="blank"><font color="#e12b00"> Read More...</font></a>
+</div>
+<hr>
+
+
+<div class="post-preview">
+			<h1 id='design' class="page-header"> <font color="#333333">Design Your Own Experiments</font> 
+                    <small> Enables user to design new experiments without coding....</small></h1>	
+
+
+<p>One of the main target group, the PSLab is aimed at, is high-school science teachers and students, who may or may-not be familiar with the computer programming. For such users it is difficult to design or develop new experiments on their own. They may also find it difficult to fetch the data and plot required graphs, if a ready-made GUI is not available for that particular experiment.</p>
+
+<p>To enable such users to quickly design a simple experiment for studying various phenomena, we have developed a simple Experiment Designer GUI. This incorporates few controls, read-back elements and easy functions to select parameters and plot graphs.</p>
+
+ <a href="http://blog.fossasia.org/design-your-own-experiments-with-pslab/" target="blank"><font color="#e12b00"> Read More...</font></a>
+</div>  
+   <hr>
+   
+   <a href="http://blog.fossasia.org/pslab-communication-function-calls/" target="blank"><font color="#e12b00"> PSLab Communication Function Calls..</font></a>
+</div>  
+   <hr>
+   
+   
+   
+ 
+    
+  </div>
+</div>
+</div>
+
+		
+
+
+
+<!-- Footer -->
+<footer>
+  <ul class="list-inline text-center">
+    <div class="container">PSLab @ FOSSASIA</div>
+    <div class="container">pslab[AT] gmail.com</div>
+    <div class="container">Join us on our  <a href=" https://fossasia.slack.com/messages/pocketscience/">Slack Channel</a>   [Get a <a href="http://fossasia-slack.herokuapp.com/"> Slack Invite</a>]  </div>
+    <!--<li>
+      <a target="_blank" href="https://twitter.com/SHD_India">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="https://www.facebook.com/sciencehackdayindia/">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+    </li>-->
+    <!-- <li>
+    <a href="">
+    <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+  </span>
+</a>
+</li> -->
+</ul>
+</footer>
+
+<!-- jQuery -->
+<script src="vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Contact Form JavaScript -->
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="js/contact_me.js"></script>
+
+<!-- Theme JavaScript -->
+<script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
