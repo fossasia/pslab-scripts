@@ -29,12 +29,16 @@ footer{
 }
 .fr{
   float:right;
+  width: 40%;
+  color: white;
 }
 .fl{
   float:left;
   margin-left:10%;
   padding-left:20%;
   margin-top:10px;
+  width: 40%;
+  color: white;
 }
 }
 
@@ -44,6 +48,8 @@ footer{
   margin:auto;
   width:100%;
   padding-left:0;
+  width: 100%;
+  color: white;
 }
 footer{
   height: 500px;
@@ -63,11 +69,6 @@ footer > ul > div > a {
 footer > ul > div > a:link:hover {
   color: #999;
   text-decoration:none;
-}
-
-.foot {
-  width: 40%;
-  color: white;
 }
 
 .fa-stack-1x:hover{
