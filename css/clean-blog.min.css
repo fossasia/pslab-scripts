@@ -61,7 +61,7 @@ footer > ul > div > a {
 
 footer > ul > div > a:link:hover {
   color: #333333;
-  background-color: rgba(255,255,255,0.09);
+  background-color: white;
   text-decoration:none;
 }
 
