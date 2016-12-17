@@ -57,11 +57,11 @@ footer > ul > div {
 
 footer > ul > div > a {
   color: white;
+  font-variant: small-caps;
 }
 
 footer > ul > div > a:link:hover {
-  color: #333333;
-  background-color: white;
+  color: #999;
   text-decoration:none;
 }
 
