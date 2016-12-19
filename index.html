@@ -44,38 +44,43 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav" style="width:100%;margin:auto;">
-			<li>
-				<a href="index.html">Home</a>
-			</li>
-			<li class="dropdown">
-				<a class="menu-item" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="dropdown-tab-navbar">Getting Started<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li>
-						<a href="#features">Features</a>
-					</li>
-					<li>
-						<a href="#installation">Installation</a>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="#communication">Hardware communication</a>
-			</li>
-			<li>
-				<a href="#design">Design your own experiment</a>
-			</li>
-			<li>
-				<a href="developers.html">Developers & Mentors</a>
-			</li>
-			<li>
-				<a href="https://github.com/fossasia/pslab/raw/development/docs/pslab-schematics.pdf"target="blank">PSLab-Schematics</a>
-			</li>
-			<li>
-				<a href="http://fossasia.org" target="_blank">FOSSASIA</a>
-          </li>
-        </ul>
-      </div>
+			<a href="http://fossasia.org" id="light-logo" class="link-logo"><img src="img/fossasia-logo-light.png" alt="fossasia logo" class="logo-navbar" style="cursor: pointer;"></a>
+			<a href="http://fossasia.org" id="dark-logo" class="link-logo"><img src="img/fossasia-logo.png" alt="fossasia logo" class="logo-navbar" style="cursor: pointer;"></a>
+			<ul class="nav navbar-nav navbar-right">
+				<li id="fossasia-link">
+					<a href="http://fossasia.org" target="_blank">FOSSASIA</a>
+	          	</li>
+				<li>
+					<a href="index.html">Home</a>
+				</li>
+				<li>
+					<a href="#features">Features</a>
+				</li>
+				<li class="dropdown">
+					<a class="menu-item" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="dropdown-tab-navbar">Getting Started<span class="caret"></span></a>
+					<ul class="dropdown-menu dropdown-menu-right">
+						<li>
+							<a href="#design">Design your own experiment</a>
+						</li>
+						<li>
+							<a href="#installation">Installation</a>
+						</li>
+						<li>
+							<a href="#communication">Hardware communication</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="developers.html">Developers & Mentors</a>
+				</li>
+				<li>
+					<a href="https://github.com/fossasia/pslab/raw/development/docs/pslab-schematics.pdf"target="blank">PSLab-Schematics</a>
+				</li>
+				<li>
+					<a href="http://blog.fossasia.org/tag/pslab/">Blog</a>
+				</li>
+	        </ul>
+      	</div>
       <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
