@@ -30,7 +30,7 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-default navbar-custom navbar-static-top">
+  <nav class="navbar navbar-default navbar-custom navbar-static-top" id="sticky-navbar">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header navbar-static-top page-scroll">
@@ -42,16 +42,22 @@
 		</div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
+
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav" style="float:none;width:1297px;margin:auto;">
+			<ul class="nav navbar-nav" style="width:100%;margin:auto;">
 			<li>
 				<a href="index.html">Home</a>
 			</li>
-			<li>
-				<a href="#features">Features</a>
-			</li>
-			<li>
-				<a href="#installation">Installation</a>
+			<li class="dropdown">
+				<a class="menu-item" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="dropdown-tab-navbar">Getting Started<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="#features">Features</a>
+					</li>
+					<li>
+						<a href="#installation">Installation</a>
+					</li>
+				</ul>
 			</li>
 			<li>
 				<a href="#communication">Hardware communication</a>
@@ -77,7 +83,7 @@
 
   <!-- Page Header -->
   <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: linear-gradient(120deg, #9C0000, #FF5733); ">
+<header class="intro-header" style="background-image: linear-gradient(120deg, #9C0000, #FF5733); " id="sadfasf">
 	<div class="container">
       <div class="row">
 			<div class="col-lg-12 col-md-10 ">
@@ -343,6 +349,9 @@ The output of the program is here...
 
 <!-- Theme JavaScript -->
 <script src="js/clean-blog.min.js"></script>
+
+<!-- Sticky Header -->
+<script src="js/sticky-header.js"></script>
 
 </body>
 
