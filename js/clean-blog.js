@@ -7,6 +7,9 @@ $(function() {
     }).on("blur", ".floating-label-form-group", function() {
         $(this).removeClass("floating-label-form-group-with-focus");
     });
+    $(".navbar-collapse ul li a").click(function(){
+    $(".navbar-toggle:visible").click();
+  })
 });
 
 // Navigation Scripts to Show Header on Scroll-Up
