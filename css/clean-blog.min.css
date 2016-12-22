@@ -79,7 +79,7 @@ footer > ul > div > a:link:hover {
 }
 
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 4px;
 }
  
 /* Track */
