@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$("#labs-tab").on("click",function(){window.location.href = "http://labs.fossasia.org";})
 
 	var stickyNavTop = $('#sticky-navbar').offset().top;
 	 
