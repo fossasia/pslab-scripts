@@ -38,7 +38,7 @@
 			<span class="sr-only">Toggle navigation</span>
 			Menu <i class="fa fa-bars"></i>
 			</button>
-			
+
 		</div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -127,32 +127,32 @@
   <div class="row">
     <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="post-preview">
-        <h1 class="page-header"> <font color="#333333">PSLab</font> 
+        <h1 class="page-header"> <font color="#333333">PSLab</font>
                     <small> - Pocket Science Lab</small>
 		</h1>
        <p>PSLab  is a new addition to FOSSASIA Science Lab. This tiny pocket lab  provides  an array of necessary equipments for doing science and engineering experiments. It can function like an oscilloscope, waveform generator, frequency counter, programmable voltage and current source and also as a data logger.</p>
        <p>The project is inspired from <a href="http://expeyes.in">ExpEYES</a></p>
-       
+
       <div class="col-lg-6 col-sm-6 text-center">
             <figure>
 				<img class="" src="img/pslabdesign.png" alt="">
 				<figcaption><font color="#8B7878">New Front Panel Design</font></figcaption>
-			</figure>  
+			</figure>
       </div>
           <div class="col-lg-6 col-sm-6 text-center">
 			<figure>
 				<img class="" src="img/psl2.jpg" alt="">
 				<figcaption><font color="#8B7878">Size:62mmx78mmx13mm</font></figcaption>
-			</figure> 
+			</figure>
 		</div>
-		
-	
+
+
 		<br>
        <p>The control and measurement functions are written in Python programming language. Pyqtgraph is used for plotting library. A variety of experiments can be performed using GUI applications written in python. PSLab is interfaced and powered by USB port of the computer.</p>
       <hr>
-      
+
        <div class="post-preview">
-        <h1 id='features' class="page-header"> <font color="#333333">Features of PSLab</font> 
+        <h1 id='features' class="page-header"> <font color="#333333">Features of PSLab</font>
                     <small> - Various control and measurement tools</small>
 		</h1>
 		<p>PSLab is equipped with array of useful control and measurement tools. This tiny but powerful Pocket Science Lab enables you to perform various experiments and study a wide range of phenomena.</p>
@@ -172,7 +172,7 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <ul><font color = "#8F939F">						
+                            <ul><font color = "#8F939F">
                                 <li>4-Channel, 4MHz, 15nS Logic Analyzer</li>
                                 <li> 2x sine wave generators. 5Hz to 5KHz. Manual amplitude control</li>
                                 <li>4x PWM generators. 15nS resolution. Up to 8MHz</li>
@@ -183,11 +183,11 @@
 						</div>
           <p>Python based communication library and experiment specific PyQt4 based GUI’s make PSLab a must have tool for programmers, hobbyists, science and engineering teachers and also students.  </p>
           <a href="http://blog.fossasia.org/features-and-controls-of-pocket-science-lab/" target="blank"> <font color="#e12b00"> Learn More...</font></a>
-    
+
         <hr>
-        
+
        <div class="post-preview">
-			<h1 class="page-header"> <font color="#333333">PSLab Code Repositories</font> 
+			<h1 class="page-header"> <font color="#333333">PSLab Code Repositories</font>
                     <small> - ........</small>
 			</h1>
 		</div>
@@ -199,11 +199,11 @@
 				<li><span style="color: #e12b00;"><a style="color: #e12b00;" href="https://github.com/fossasia/fossasia-pslab-apps" target="_blank">https://github.com/fossasia/pslab-apps</a>  </span>: This repository is for Qt based GUI programs, widgets and templates for various experiments.</li>
 			</ul>
 		<hr>
-		
+
 		<div class="post-preview">
-			<h1 id='installation' class="page-header"> <font color="#333333">Installation </font> 
-                    <small> How to install pslab from source?</small></h1>	
-			
+			<h1 id='installation' class="page-header"> <font color="#333333">Installation </font>
+                    <small> How to install pslab from source?</small></h1>
+
 			<p>To install PSLab on Debian based Gnu/Linux system, the following dependencies must be installed.
 		</div>
 
@@ -216,7 +216,7 @@
 			Pyqtgraph                #Plotting library
 			pyopengl and qt-opengl   #for 3D graphics
 			iPython-qtconsole        #optional</pre>
-	
+
 			<p>Now clone both the repositories <span style="color: #e12b00;"><a style="color: #e12b00;" href="https://github.com/wavicles/fossasia-pslab-apps" target="_blank">pslab-apps</a></span> and <span style="color: #e12b00;"><a style="color: #e12b00;" href="https://github.com/wavicles/fossasia-pslab" target="_blank">pslab</a></span> </p>
 
 
@@ -233,29 +233,29 @@
 
 			For the main GUI (Control panel), you can run <em>Experiments</em> from the terminal.
 			<pre class="plain-readme">$ Experiments</pre>
-			
+
 			<a href="http://blog.fossasia.org/pslab-code-repository-and-installation/" target="blank"><font color="#e12b00"> Read More...</font></a>
-			
+
 		</div>
 		<hr>
-		
+
 	<div class="post-preview">
-			<h1 id='communication' class="page-header"> <font color="#333333">Communicating with PSLab </font> 
-                    <small> Getting started...</small></h1>	
-					
-		
+			<h1 id='communication' class="page-header"> <font color="#333333">Communicating with PSLab </font>
+                    <small> Getting started...</small></h1>
+
+
 		<p>Connecting to PSLab is as simple and straight forward as this...</p>
 		<pre><span style="color: #808080;">&gt;&gt;&gt; from PSL import sciencelab
 &gt;&gt;&gt; I = sciencelab.connect()     <span style="color: #666699;">#Returns None if device isn't found</span>
 <span style="color: #666699;"># An example function that measures voltage present at the specified analog input</span>
 &gt;&gt;&gt; print I.get_average_voltage('CH1')</span></pre>
-		
+
 		<p>Various sensors can be connected to PSLab and data can be fetched with a simple python code as shown below...</p>
 		<pre class="western"><span style="color: #808080;">&gt;&gt;&gt; from PSL.SENSORS import HMC5883L <span style="color: #666699;">#A 3-axis magnetometer</span>
 &gt;&gt;&gt; M = HMC5883L.connect()
 &gt;&gt;&gt; Gx,Gy,Gz = M.getRaw()
 		</span></pre>
-		
+
 		<h4>Example 1: Capturing and plotting a sine wave</h4>
 		Connect WG1 to CH1 and run the following code.
 			<pre><span style="color: #808080;">			&gt;&gt;&gt; from pylab import *
@@ -268,15 +268,15 @@
 			&gt;&gt;&gt; show()</span></pre>
 
 The output of the program is here...
-<img class="aligncenter wp-image-3110 size-medium" src="http://blog.fossasia.org/wp-content/uploads/2016/08/sine1-750x565.png" alt="sine1" width="300" height="200" />		
+<img class="aligncenter wp-image-3110 size-medium" src="http://blog.fossasia.org/wp-content/uploads/2016/08/sine1-750x565.png" alt="sine1" width="300" height="200" />
 <a href="http://blog.fossasia.org/communicating-with-pocket-science-lab-via-usb-and-capturing-and-plotting-sine-waves/" target="blank"><font color="#e12b00"> Read More...</font></a>
 </div>
 <hr>
 
 
 <div class="post-preview">
-			<h1 id='design' class="page-header"> <font color="#333333">Design Your Own Experiments</font> 
-                    <small> Enables user to design new experiments without coding....</small></h1>	
+			<h1 id='design' class="page-header"> <font color="#333333">Design Your Own Experiments</font>
+                    <small> Enables user to design new experiments without coding....</small></h1>
 
 
 <p>One of the main target group, the PSLab is aimed at, is high-school science teachers and students, who may or may-not be familiar with the computer programming. For such users it is difficult to design or develop new experiments on their own. They may also find it difficult to fetch the data and plot required graphs, if a ready-made GUI is not available for that particular experiment.</p>
@@ -284,11 +284,11 @@ The output of the program is here...
 <p>To enable such users to quickly design a simple experiment for studying various phenomena, we have developed a simple Experiment Designer GUI. This incorporates few controls, read-back elements and easy functions to select parameters and plot graphs.</p>
 
  <a href="http://blog.fossasia.org/design-your-own-experiments-with-pslab/" target="blank"><font color="#e12b00"> Read More...</font></a>
-</div>  
+</div>
    <hr>
-   
+
    <a href="http://blog.fossasia.org/pslab-communication-function-calls/" target="blank"><font color="#e12b00"> PSLab Communication Function Calls..</font></a>
-</div>  
+</div>
    <hr>
    <!--Developers and mentors Section starts -->
 <div class="row">
@@ -303,42 +303,42 @@ The output of the program is here...
              <div class="col-lg-4 col-sm-6 text-center">
 				<img class="img-circle img-responsive img-center" src="img/jithin.jpg" alt="">
 				<h3>
-				<small><a href="http://jithinbp.in/">jithinbp.in</a></small>
+				<small class="link"><a href="http://jithinbp.in/">Jithin</a></small>
 				</h3>
 			</div>
             <div class="col-lg-8">
                 <h3 id="jithin">Jithin B P</h3>
-                <h4><a href= "csparkresearch.in/">Cspark Research</a></h4>
-                <p>Young Scientist in the making. Masters in Physics from Indian Institute of Science Education and Research, Mohali. <p>Jithin is working on instrumentation for labs and has independently developed severel python powered versatile lab tools, latest one is SEELABLET - An instrumentation cluster for science and engineering experiments. </p>
-                                
-                <P> Designs and developes software/hardware framework for various scientific instrumentation including PSLab.</P>
-                                
-            </div> 
+                <h4 class="link"><a href= "http://csparkresearch.in/">Cspark Research</a></h4>
+                <p>Young Scientist in the making. Masters in Physics from Indian Institute of Science Education and Research, Mohali.</p> <p>Jithin is working on instrumentation for labs and has independently developed severel python powered versatile lab tools, latest one is SEELABLET - An instrumentation cluster for science and engineering experiments. </p>
+
+                <p> Designs and developes software/hardware framework for various scientific instrumentation including PSLab.</p>
+
+            </div>
           </div>
         <hr>
-        <!-- Developer Two -->    
+        <!-- Developer Two -->
             <div class="row">
              <div class="col-lg-4 col-sm-6 text-center">
 				<img class="img-circle img-responsive img-center" src="img/gnovi.jpeg" alt="">
 				<h3>
-				<small><a href="http://gnovi.in">gnovi.in</a></small>
+				<small class="link"><a href="http://gnovi.in">Gnovi</a></small>
 				</h3>
 			</div>
-		
+
             <div class="col-lg-8">
                 <h3 id="praveen">Praveen Patil</h3>
                 <h4>For the love of Physics!</h4>
                 <p>A Physics Teacher who loves FOSS, Fedora and Python. Organizer <a href="http://pybelgaum.org/2015/" target="blank">Pybelgaum</a> and <a href="http://sciencehack.in" target="blank"> Science Hack Day India</a></p>
                 <p>Praveen has been a Fossasia-GSoC (Google Summer of Code) alumnus (internship for three years 2014, 2015 and 2016). Involved in developing new experiments and sensor plug-ins for ExpEYES and PSLab. He is also mentor for Google Code-In with FOSSASIA. Actively involved in ExpEYES project, teacher training programs and currently working on Pocket Science Lab  along with Jithin B P. </p>
-                
-                
+
+
                 <P>Designs new experiments and developes GUI's for PSLab</P>
             </div>
         </div>
         <hr>
-         
-        
-            
+
+
+
            <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">PSLab Mentors
@@ -346,15 +346,15 @@ The output of the program is here...
                 </h1>
             </div>
         </div>
-        
-               
-        
+
+
+
         <!-- Mentor One -->
         <div class="row">
              <div class="col-lg-4 col-sm-6 text-center">
 				<img class="img-circle img-responsive img-center" src="img/ajith.jpg" alt="">
 				<h3>
-				<small><a href="http://expeyes.in">ExpEYES</a></small>
+				<small class="link"><a href="http://expeyes.in">ExpEYES</a></small>
 				</h3>
 			</div>
             <div class="col-lg-8">
@@ -364,18 +364,18 @@ The output of the program is here...
                 <p>The <a href="http://www.iuac.res.in/~elab/phoenix/" target="blank">Phoenix</a> project is the brainchild of Dr. Ajith. His selfless and dedicated efforts led to the latest development <a href="http://expeyes.in" target="blank">ExpEYES</a>- a computer interface for teaching physics and engineering. ExpEYES is currently the cheapest educational system available to teach science.</p>
 				<p>Dr. Ajith Kumar does designing, developing experiments and writing software and documentaion for all the equipment from Phoenix project.</p>
 
-              
+
             </div>
         </div>
         <hr>
         <!-- /.row -->
-        
+
        <!-- Mentor Two -->
         <div class="row">
              <div class="col-lg-4 col-sm-6 text-center">
 				<img class="img-circle img-responsive img-center" src="img/hpdang.jpeg" alt="">
 				<h3>
-				<small><a href="">FOSSASIA</a></small>
+				<small class="link"><a href="">FOSSASIA</a></small>
 				</h3>
 			</div>
             <div class="col-lg-8">
@@ -384,7 +384,7 @@ The output of the program is here...
                 <p>Ambassador Science Hack Day, Founder FOSSASIA,Organizes SHDs across Asia.</p>
                 <p>Apart from the fascination in mathematics and technology she is interested in how technology can improve peoples live. As a member of the FashionTec working group she works on topics of mathematical grading of garment patterns.She also coordinates the Google Summer of Code program of the project.</p>
                 <p>She is also a core-member of GNOME.Asia and FOSSASIA. Professionally, Hong Phuc works as a consultant and researcher for an International data research company. </p>
-                
+
             </div>
         </div>
         <hr>
@@ -394,7 +394,7 @@ The output of the program is here...
              <div class="col-lg-4 col-sm-6 text-center">
 				<img class="img-circle img-responsive img-center" src="img/mario.jpeg" alt="">
 				<h3>
-				<small><a href="http://mariobehling.de/">mariobehling.de</a></small>
+				<small class="link"><a href="http://mariobehling.de/">Mario Behling</a></small>
 				</h3>
 			</div>
             <div class="col-lg-8">
@@ -402,52 +402,52 @@ The output of the program is here...
                 <h4>Founder FOSSASIA</h4>
                 <p>Mario is a German born technologist with more than a decade of experience in international ICT development, start ups and events organization. He is the founder of Lubuntu and one of the main organizers of FOSSASIA.</p>
                 <p>Mario  is also one of the founders of <a href="http://loklak.net/" target="blank">Loklak </a>-Tweet Engine for Humans and Machines of the Internet of Things </p>
-                
+
             </div>
         </div>
         <hr>
         <!-- /.row -->
-            
+
           <!-- Mentor Four -->
         <div class="row">
              <div class="col-lg-4 col-sm-6 text-center">
 				<img class="img-circle img-responsive img-center" src="img/lorenz.jpeg" alt="">
 				<h3>
-				<small><a href="https://github.com/lorenzgerber" target="blank">Lorenz Gerber</a></small>
+				<small class="link"><a href="https://github.com/lorenzgerber" target="blank">Lorenz Gerber</a></small>
 				</h3>
 			</div>
             <div class="col-lg-8">
                 <h3 id="lorenz">Lorenz Gerber</h3>
                 <h4>For the love of Science!</h4>
                 <p>Analytical chemist by training. Worked with analytical measurement equipment, mostly spectroscopy  of different kinds. Currently, postdoc at the Swedish University of Agricultural Sciences in Sweden.</p>
-                
+
             </div>
         </div>
         <hr>
-        <!-- /.row -->  
+        <!-- /.row -->
             <!-- Mentor Five -->
         <div class="row">
              <div class="col-lg-4 col-sm-6 text-center">
-				<img class="img-circle img-responsive img-center" src="http://placehold.it/225x225" alt="">
+				<img class="img-circle img-responsive img-center" src="img/gisoong.jpg" alt="">
 				<h3>
-				<small><a href="https://github.com/dhsgisc" target="blank">Gi Soong Chee</a></small>
+				<small class="link"><a href="https://github.com/dhsgisc" target="blank">Gi Soong Chee</a></small>
 				</h3>
 			</div>
             <div class="col-lg-8">
                 <h3 id="lorenz">Gi Soong Chee</h3>
                 <h4>For the love of Science!</h4>
                 <p>Teacher at Dunman highschool, singapore</p>
-                
+
             </div>
         </div>
         <hr>
-        <!-- /.row -->  
+        <!-- /.row -->
              <!-- Mentor Six -->
         <div class="row">
              <div class="col-lg-4 col-sm-6 text-center">
 				<img class="img-circle img-responsive img-center" src="img/georges.jpeg" alt="">
 				<h3>
-				<small><a href="https://github.com/georgesk">Georges</a></small>
+				<small class="link"><a href="https://github.com/georgesk">Georges</a></small>
 				</h3>
 			</div>
             <div class="col-lg-8">
@@ -455,39 +455,38 @@ The output of the program is here...
                 <h4><a href="http://www.lyceejeanbart.fr/" target="blank">Lycee Jean Bart</a></h4>
                 <p>Teacher of physics and chemistry at lycée Jean Bart, Dunkerque, France. Free software enthusiast </p>
                 <p>Due to his efforts expEYES software is now part of Debian GNU/Linux and it's derivatives like Ubuntu. He did the localisation of software and documentation, French versions are already available, Created a logo. Introduced PHOENIX in Europe, first using in his school, then took to others. Manages  the expEYES resository on github. Suggested a lot of creative ideas for the project.</p>
-                <P></P>
-                
+                <p></p>
+
             </div>
         </div>
         <hr>
         <!-- /.row -->
         </div>
-        
-        <hr> 
+
+        <hr>
         <!--Developers and mentors Section ends -->
-   
-    
+
+
   </div>
 </div>
 </div>
-</div>
-		
+
 
 
 
 <!-- Footer -->
 <footer>
-  <ul class="fl" style="text-align:center;">
+  <ul class="fl" style="font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;">
   <div><h2 style="margin-bottom:40px;">Info</h2></div>
-    <div>PSLab @ FOSSASIA</div>
-    <div>
-  Email us:
-  <a href="mailto: pslab@gmail.com">pslab[AT] gmail.com</a>
+    <div>PSLab &#064FOSSASIA</div>
+    <div class="contacts">
+    <img src="img/Communicationemail.png" width="45px"/>
+  <!-- Email us: -->
+  <a href="mailto:pslab@gmail.com">pslab&#064gmail.com</a>
 </div>
-    <div>Our  <a href=" https://fossasia.slack.com/messages/pocketscience/">Slack Channel</a>   [Get a <a href="http://fossasia-slack.herokuapp.com/"> Slack Invite</a>]  </div>
-    
-    
-    
+    <div class="contacts"><img src="img/slack.png" width="45px" /> <a href=" https://fossasia.slack.com/messages/pocketscience/">Channel</a> | <a href="http://fossasia-slack.herokuapp.com/">Invite</a></div>
+
+
 </ul>
 <div class="fr">
   <p></p><h2>Join us</h2>
@@ -495,7 +494,7 @@ The output of the program is here...
 <span>
       <a target="_blank" href="https://twitter.com/SHD_India">
         <span class="fa-stack fa-lg">
-          
+
           <i class="fa fa-twitter fa-stack-1x fa-inverse" style="z-index:2;"></i>
         <i class="fa fa-circle fa-stack-2x"></i></span>
       </a>
@@ -503,14 +502,14 @@ The output of the program is here...
     <a href="https://github.com/fossasia/pslab.fossasia.org">
     <span class="fa-stack fa-lg">
     <i class="fa fa-github fa-stack-1x fa-inverse" style="z-index:2;"></i><i class="fa fa-circle fa-stack-2x"></i>
-    
+
   </span>
 </a>
 </span><span>
       <a target="_blank" href="https://www.facebook.com/sciencehackdayindia/">
         <span class="fa-stack fa-lg">
           <i class="fa fa-facebook fa-stack-1x fa-inverse" style="z-index:2;"></i><i class="fa fa-circle fa-stack-2x"></i>
-          
+
         </span>
       </a>
     </span>
