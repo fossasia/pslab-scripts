@@ -42,7 +42,7 @@ img.logo-navbar{
 
 .navbar-nav > li > .dropdown-menu a, .navbar-nav > li > .dropdown-menu a:hover{ color: black; }
 
-.navbar-default .navbar-nav>.open>#dropdown-tab-navbar{background-color: #e12b00 ; color: white;}
+.navbar-default .navbar-nav>.open>.dropdown-tab-navbar{background-color: #e12b00 ; color: white;}
 
 .dropdown:hover .dropdown-menu {
     display: block;
