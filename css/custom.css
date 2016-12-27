@@ -6,6 +6,41 @@
     top: 0;
   }
 }
+
+p>a{
+  color:#e12b00;
+  text-decoration:none; 
+}
+
+p>a:hover
+{
+  text-decoration:underline; 
+}
+
+
+a{
+  color:#e12b00;
+  text-decoration:none; 
+}
+
+
+a:hover
+{
+  text-decoration:underline; 
+}
+
+div.post-preview a{
+  color:#e12b00;
+  text-decoration:none; 
+}
+
+
+div.post-preview a:hover
+{
+  text-decoration:underline; 
+}
+
+
 .sticky{
 	position: fixed;
   width: 100%;
@@ -48,3 +83,6 @@ img.logo-navbar{
     display: block;
     margin-top: 0;
  }
+
+
+
