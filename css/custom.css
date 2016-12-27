@@ -1,3 +1,14 @@
+a
+{
+  color:#e12b00;
+  text-decoration:none; 
+}
+
+a:hover
+{
+  text-decoration:underline; 
+}
+
 @media (max-width: 767px) /* @grid-float-breakpoint -1 */
 {
   .navbar-custom
@@ -6,6 +17,7 @@
     top: 0;
   }
 }
+
 .sticky{
 	position: fixed;
   width: 100%;
