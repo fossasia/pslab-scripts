@@ -3,9 +3,10 @@
   .navbar-custom
   {
     position: fixed;
-    top: auto;
+    top: 0;
   }
 }
+<<<<<<< HEAD
 
 footer{
   color: #ecf0f1;
@@ -45,3 +46,47 @@ footer a:hover{
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+=======
+.sticky{
+	position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  border-top: 0;
+}
+
+.sticked{
+	background-color: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid #f2f2f2;
+}
+.sticked .navbar-brand {
+  color: #333333;
+}
+.sticked .navbar-brand:hover,
+.sticked .navbar-brand:focus {
+  color: #0085A1;
+}
+.sticked .nav li a {
+  color: #333333;
+}
+.sticked .nav li a:hover,
+.sticked .nav li a:focus {
+  color: #0085A1;
+}
+
+img.logo-navbar{
+  width: 150px;
+  float: left;
+  margin-top: 15px;
+}
+
+.navbar-nav > li > .dropdown-menu a, .navbar-nav > li > .dropdown-menu a:hover{ color: black; }
+
+.navbar-default .navbar-nav>.open>.dropdown-tab-navbar{background-color: #e12b00 ; color: white;}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+ }
+>>>>>>> refs/remotes/fossasia/gh-pages
