@@ -31,7 +31,8 @@
 }
 .sticked .nav li a:hover,
 .sticked .nav li a:focus {
-  color: #0085A1;
+  color: #333333;
+font-weight:bold;
 }
 
 img.logo-navbar{
