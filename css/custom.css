@@ -69,6 +69,8 @@ footer a{
 .joinus i{
   color: #BF1F12;
   background-color: #ecf0f1;
+  border-radius: 100%;
+  border: 1px white dashed;
 }
 
 .joinus i:hover{
