@@ -28,16 +28,38 @@
 }
 .sticked .nav li a {
   color: #333333;
+  content: attr(title);
 }
 .sticked .nav li a:hover,
 .sticked .nav li a:focus {
-  color: #0085A1;
+  font-weight: bold;
+  color: #000;
+}
+
+.sticked .nav li a::after {
+  overflow: hidden;
+  display: block;
+  height: 0;
+  content: attr(title);
+  font-weight: bold;
+}
+
+.sticked .nav .dropdown > a:hover {
+  margin-left: -1px;
 }
 
 img.logo-navbar{
   width: 150px;
   float: left;
   margin-top: 15px;
+}
+
+#labs-tab {
+  width: 84px;
+}
+
+#getstarted {
+  width: 172px;
 }
 
 .navbar-nav > li > .dropdown-menu a, .navbar-nav > li > .dropdown-menu a:hover{ color: black; }
@@ -88,4 +110,8 @@ footer a:hover{
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+
+.devs img {
+  margin: 0 auto;
 }
