@@ -6,6 +6,20 @@
     top: 0;
   }
 }
+
+
+#uniformlink:hover
+{
+  text-decoration:underline; 
+}
+
+#uniformlink
+{
+  color:#e12b00;
+  text-decoration:none; 
+}
+
+
 .sticky{
 	position: fixed;
   width: 100%;
