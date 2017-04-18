@@ -1,8 +1,12 @@
 # Website for PSLab
 
-## Credits
-Based on the [Clean Blog](http://startbootstrap.com/template-overviews/clean-blog/) theme using Bootstrap
+[![Gitter](https://badges.gitter.im/fossasia/pslab.svg)](https://gitter.im/fossasia/pslab?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
+## Site
+Site hosted [pslab.fossasia.org](http://pslab.fossasia.org).
 
 ## Copyright and License
 
-Copyright(c) PSLab@FOSSASIA. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/gh-pages/LICENSE) license.
+Copyright(c) PSLab@FOSSASIA.
+
+Site released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/gh-pages/LICENSE) license.
