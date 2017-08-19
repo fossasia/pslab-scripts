@@ -1,60 +1,267 @@
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pocket Science Lab">
+    <meta name="keywords" content="PSLab, Pocket Science Lab, Android, Python Science Lab, ExpEYES, FOSSASIA">
+    <meta name="author" content="">
+    <title>Pocket Science Lab</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Theme CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <script src="https://use.fontawesome.com/f219d2cd7c.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <link href="css/custom.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+
 <body>
-<h2>Privacy Policy</h2>
-<p>FOSSASIA built the Pocket Science Lab app as an open source app. This SERVICE is provided by FOSSASIA and is intended for use as is.</p>
-<p>This page is used to inform website visitors regarding our policies with the collection, use, and
-    disclosure of Personal Information if anyone decided to use our Service.</p>
-<p>If you choose to use our Service, then you agree to the collection and use of information in
-    relation with this policy. The Personal Information that we collect are used for providing and
-    improving the Service. We will not use or share your information with anyone except as described
-    in this Privacy Policy.</p>
-<p>The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions,
-    which is accessible at Pocket Science Lab app, unless otherwise defined in this Privacy Policy.</p>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-static-top" id="sticky-navbar">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header navbar-static-top page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <a href="http://fossasia.org" id="light-logo" class="link-logo"><img src="img/fossasia-logo-light.png"
+                                                                                 alt="fossasia logo" class="logo-navbar"
+                                                                                 style="cursor: pointer;"></a>
+            <a href="http://fossasia.org" id="dark-logo" class="link-logo"><img src="img/fossasia-logo.png"
+                                                                                alt="fossasia logo" class="logo-navbar"
+                                                                                style="cursor: pointer;"></a>
+            <ul class="nav navbar-nav navbar-right">
+                <li id="fossasia-link">
+                    <a href="http://fossasia.org" target="_blank">FOSSASIA</a>
+                </li>
+                <li>
+                    <a href="index.html" title="Home">Home</a>
+                </li>
+                <li>
+                    <a href="index.html#features" title="Features">Features</a>
+                </li>
+                <li class="dropdown" id="labs-tab">
+                    <a class="menu-item" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                       class="dropdown-tab-navbar" title="Labs">Labs<span class="caret"></span></a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a target="_self" href="https://github.com/fossasia?utf8=✓&q=pslab">Contribute on Github</a>
+                        </li>
+                        <li><a target="_self" href="http://labs.fossasia.org/#projects">Projects</a></li>
+                        <li><a target="_self" href="http://labs.fossasia.org/ideas.html">Project Ideas</a></li>
+                        <li><a target="_self" href="http://pslab.fossasia.org/">PSLab</a></li>
+                        <li><a target="_self" href="http://knitting.fossasia.org/">Knitting Lab</a></li>
+                        <li><a target="_self" href="http://codeheat.org">Code Heat Contest</a></li>
+                        <li><a target="_self" href="http://labs.fossasia.org/stipends.html">Project Stipends</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" id="getstarted">
+                        <a class="menu-item" href="index.html#installation" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-tab-navbar" title="Getting Started">Getting Started<span class="caret" style="margin-left: 1px;"></span></a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a href="index.html#design" title="Design your own experiment">Design your own experiment</a>
+                            </li>
+                            <li>
+                                <a href="index.html#installation" title="Installation">Installation</a>
+                            </li>
+                            <li>
+                                <a href="index.html#communication" title="Hardware communication">Hardware communication</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="index.html#developers" title="Developers And Mentors">Developers And Mentors</a>
+                    </li>
+                <li>
+                    <a href="https://github.com/fossasia/pslab-hardware/raw/master/PSLab%20KiCAD/PSLab.pdf"
+                       title="PSLab-Schematics">PSLab-Schematics</a>
+                </li>
+                <li>
+                    <a href="http://blog.fossasia.org/tag/pslab/" title="Blog">Blog</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: linear-gradient(120deg, #9C0000, #FF5733); " id="sadfasf">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-10 ">
+                <div class="site-heading">
+                    <h1>PSLab - Pocket Science Lab</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-<p><strong>Information Collection and Use</strong></p>
-<p>For a better experience while using our Service, we may require you to provide us with certain
-    personally identifiable information, including but not limited to users name, address, location, pictures. 
-	The information that we request will be retained by us and used as described in this privacy policy.</p>
+            <h2>Privacy Policy</h2>
+            <p>FOSSASIA built the Pocket Science Lab app as an open source app. This SERVICE is provided by FOSSASIA and
+                is intended for use as is.</p>
+            <p>This page is used to inform website visitors regarding our policies with the collection, use, and
+                disclosure of Personal Information if anyone decided to use our Service.</p>
+            <p>If you choose to use our Service, then you agree to the collection and use of information in
+                relation with this policy. The Personal Information that we collect are used for providing and
+                improving the Service. We will not use or share your information with anyone except as described
+                in this Privacy Policy.</p>
+            <p>The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions,
+                which is accessible at Pocket Science Lab app, unless otherwise defined in this Privacy Policy.</p>
 
-<p><strong>Log Data</strong></p>
-<p>We want to inform you that whenever you use our Service, in case of an error in the app we collect
-    data and information (through third party products) on your phone called Log Data. This Log Data
-    may include information such as your devices’s Internet Protocol (“IP”) address, device name,
-    operating system version, configuration of the app when utilising our Service, the time and date
-    of your use of the Service, and other statistics.</p>
+            <h3>Information Collection and Use</h3>
+            <p>For a better experience while using our Service, we may require you to provide us with certain
+                personally identifiable information, including but not limited to users name, address, location,
+                pictures.
+                The information that we request will be retained by us and used as described in this privacy policy.</p>
 
-<p><strong>Service Providers</strong></p> <!-- This part need seem like it's not needed, but if you use any Google services, or any other third party libraries, chances are, you need this. -->
-<p>We may employ third-party companies and individuals due to the following reasons:</p>
-<ul>
-    <li>To facilitate our Service;</li>
-    <li>To provide the Service on our behalf;</li>
-    <li>To perform Service-related services; or</li>
-    <li>To assist us in analyzing how our Service is used.</li>
-</ul>
-<p>We want to inform users of this Service that these third parties have access to your Personal
-    Information. The reason is to perform the tasks assigned to them on our behalf. However, they
-    are obligated not to disclose or use the information for any other purpose.</p>
+            <h3>Log Data</h3>
+            <p>We want to inform you that whenever you use our Service, in case of an error in the app we collect
+                data and information (through third party products) on your phone called Log Data. This Log Data
+                may include information such as your devices’s Internet Protocol (“IP”) address, device name,
+                operating system version, configuration of the app when utilising our Service, the time and date
+                of your use of the Service, and other statistics.</p>
 
-<p><strong>Security</strong></p>
-<p>We value your trust in providing us your Personal Information, thus we are striving to use
-    commercially acceptable means of protecting it. But remember that no method of transmission over
-    the internet, or method of electronic storage is 100% secure and reliable, and we cannot
-    guarantee its absolute security.</p>
+            <h3>Service Providers</h3>
+            <!-- This part need seem like it's not needed, but if you use any Google services, or any other third party libraries, chances are, you need this. -->
+            <p>We may employ third-party companies and individuals due to the following reasons:</p>
+            <ul>
+                <li>To facilitate our Service;</li>
+                <li>To provide the Service on our behalf;</li>
+                <li>To perform Service-related services; or</li>
+                <li>To assist us in analyzing how our Service is used.</li>
+            </ul>
+            <p>We want to inform users of this Service that these third parties have access to your Personal
+                Information. The reason is to perform the tasks assigned to them on our behalf. However, they
+                are obligated not to disclose or use the information for any other purpose.</p>
 
-<p><strong>Links to Other Sites</strong></p>
-<p>This Service may contain links to other sites. If you click on a third-party link, you will be
-    directed to that site. Note that these external sites are not operated by us. Therefore, We
-    strongly advise you to review the Privacy Policy of these websites. We have no control over, and
-    assume no responsibility for the content, privacy policies, or practices of any third-party
-    sites or services.</p>
+            <h3>Security</h3>
+            <p>We value your trust in providing us your Personal Information, thus we are striving to use
+                commercially acceptable means of protecting it. But remember that no method of transmission over
+                the internet, or method of electronic storage is 100% secure and reliable, and we cannot
+                guarantee its absolute security.</p>
 
-<p><strong>Changes to This Privacy Policy</strong></p>
-<p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page
-    periodically for any changes. We will notify you of any changes by posting the new Privacy Policy
-    on this page. These changes are effective immediately, after they are posted on this page.</p>
+            <h3>Links to Other Sites</h3>
+            <p>This Service may contain links to other sites. If you click on a third-party link, you will be
+                directed to that site. Note that these external sites are not operated by us. Therefore, We
+                strongly advise you to review the Privacy Policy of these websites. We have no control over, and
+                assume no responsibility for the content, privacy policies, or practices of any third-party
+                sites or services.</p>
 
-<p><strong>Contact Us</strong></p>
-<p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact
-    us. <a href="mailto:dev@fossasia.com">dev@fossasia.com</a> </p>
+            <h3>Changes to This Privacy Policy</h3>
+            <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page
+                periodically for any changes. We will notify you of any changes by posting the new Privacy Policy
+                on this page. These changes are effective immediately, after they are posted on this page.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+
+        <div class="col-lg-6">
+            <h2 style="">Contact</h2>
+            <hr color="white">
+
+            <div>
+                <i class="fa fa-info-circle" aria-hidden="true"></i> PSLab | <a href="http://fossasia.org">FOSSASIA</a>
+                |<a href="privacy_policy.html"> Privacy</a>
+            </div>
+
+            <div>
+                <i class="fa fa-at" aria-hidden="true"></i>
+                <a href="mailto: pslab@fossasia.org">pslab@fossasia.org</a>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <a href="https://groups.google.com/forum/#!forum/pslab-fossasia">Mailing List</a>
+            </div>
+
+            <div class="slack">
+                <i class="fa fa-slack" aria-hidden="true"></i>
+                <a href=" https://gitter.im/fossasia/pslab">PSLab Channel</a>
+            </div>
+        </div>
+
+        <div class="col-lg-6 text-center joinus">
+            <h2>Be Part Of The Community</h2>
+            <hr color="white">
+
+            <span>
+      <a target="_blank" href="https://twitter.com/SHD_India">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-twitter fa-stack-1x" style="z-index:2;"></i>
+					<i class="fa fa-circle fa-stack-2x"></i>
+				</span>
+      </a>
+    </span>
+
+            <span>
+    	<a href="https://github.com/fossasia?utf8=✓&q=pslab">
+    		<span class="fa-stack fa-lg">
+    			<i class="fa fa-github fa-stack-1x" style="z-index:2;"></i>
+					<i class="fa fa-circle fa-stack-2x"></i>
+  			</span>
+			</a>
+		</span>
+
+            <span>
+      <a target="_blank" href="https://www.facebook.com/fossasia/">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-facebook fa-stack-1x" style="z-index:2;"></i>
+					<i class="fa fa-circle fa-stack-2x"></i>
+        </span>
+      </a>
+    </span>
+        </div>
+
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    //jQuery for page scrolling feature
+    var $root = $('html, body');
+    $("a[href^='#']").click(function () {
+        $root.animate({
+            scrollTop: $($.attr(this, 'href')).offset().top - 120
+        }, 1500);
+        return false;
+    });
+</script>
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<!-- Contact Form JavaScript -->
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="js/contact_me.js"></script>
+<!-- Theme JavaScript -->
+<script src="js/clean-blog.min.js"></script>
+<!-- Sticky Header -->
+<script src="js/sticky-header.js"></script>
 </body>
+
 </html>
