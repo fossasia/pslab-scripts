@@ -32,7 +32,6 @@
 }
 .sticked .nav li a:hover,
 .sticked .nav li a:focus {
-  font-weight: bold;
   color: #000;
 }
 
@@ -41,7 +40,7 @@
   display: block;
   height: 0;
   content: attr(title);
-  font-weight: bold;
+
 }
 
 .sticked .nav .dropdown > a:hover {
