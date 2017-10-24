@@ -127,3 +127,11 @@ footer a:hover{
 .btn {
   color: rgba(255, 255, 255, 0.7) !important;
 }
+
+.footer-links {
+  font-family: "Open Sans", "Helvetica Neue";
+}
+
+.icon{
+  padding-right: 5px;
+}
