@@ -1,4 +1,4 @@
-@media (max-width: 767px) /* @grid-float-breakpoint -1 */
+ @media (max-width: 767px) /* @grid-float-breakpoint -1 */
 {
   .navbar-custom
   {
@@ -113,6 +113,8 @@ footer a:hover{
 
 .devs img {
   margin: 0 auto;
+  width: 250px;
+  height: 250px;
 }
 
 .row a {
