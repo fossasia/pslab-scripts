@@ -106,7 +106,7 @@
                 <div class="post-preview">
                     <h1 class="page-header"> <font color="#333333">PSLab</font>
                     <small> - Pocket Science Lab</small>
-		</h1>
+        </h1>
                     <p>The goal of PSLab is to create an Open Source hardware device (open on all layers) that can be used for experiments by teachers, students and citizen scientists. Our tiny pocket lab provides an array of sensors for doing science and engineering experiments. It provides functions of numerous measurement devices including an oscilloscope, a waveform generator, a frequency counter, a programmable voltage, current source and as a data logger.</p>
                     <p>We are developing the experiments starting on the <a href="https://github.com/fossasia/pslab-hardware" target="_blank">hardware</a> to libraries and <a href="https://github.com/fossasia/pslab-dekstop-apps" target="_blank">user interfaces for desktop PCs</a> and <a href="https://github.com/fossasia/pslab-android">Android apps</a> for smartphones. The PSLab project is inspired by the work of the <a href="http://openhardware.science">Open Science Hardware community</a> and the <a href="http://expeyes.in">ExpEYES</a> project.</p>
                     <div class="col-lg-6 col-sm-6 text-center">
@@ -125,13 +125,14 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <br>
+                    <br> 
+                    </div>               
                     <p>The desktop applications for the control and measurement functions are written in Python programming language. Pyqtgraph is used for plotting library. A variety of experiments can be performed using GUI applications written in python. PSLab is interfaced and powered by USB port of the computer.</p>
                     <hr>
                     <div class="post-preview" id='features'>
                         <h1 class="page-header"> <font color="#333333">Features of PSLab</font>
                     <small> - Various control and measurement tools</small>
-		</h1>
+        </h1>
                         <p>PSLab is equipped with an array of useful control and measurement tools. This tiny but powerful Pocket Science Lab enables you to perform various experiments and study a wide range of phenomena.</p>
                         <p>Some of the important applications of PSLab are mentioned below...</p>
                         <div class="row">
@@ -157,6 +158,7 @@
                                     </font>
                                 </ul>
                             </div>
+                        </div>
                             <p>For desktop PCs a Python communication library and PyQt4 based graphic user interfaces are available for a number of experiments, that make PSLab a must have tool for programmers, hobbyists, science and engineering teachers and students. </p>
                             <a href="http://blog.fossasia.org/features-and-controls-of-pocket-science-lab/">
                                 <font color="#e12b00"> Learn More...</font>
@@ -165,7 +167,7 @@
                             <div class="post-preview">
                                 <h1 class="page-header"> <font color="#333333">PSLab Code Repositories</font>
                     <small> - ........</small>
-			</h1>
+            </h1>
                             </div>
                             <P>The following <a href="https://github.com/fossasia?utf8=✓&q=pslab">code repositories</a> of PSLab are available.</P>
                             <ul>
@@ -182,18 +184,18 @@
                                 <p>To install PSLab for Desktop PCs on Debian based Gnu/Linux system, the following dependencies must be installed.
                             </div>
                             <pre><strong><span style="color: #333333;">Dependencies</span></strong>
-			============
-			PyQt 4.7+, PySide, or PyQt5
-			python 2.6, 2.7, or 3.x
-			NumPy, Scipy
-			pyqt4-dev-tools          #for pyuic4
-			Pyqtgraph                #Plotting library
-			pyopengl and qt-opengl   #for 3D graphics
-			iPython-qtconsole        #optional</pre>
+            ============
+            PyQt 4.7+, PySide, or PyQt5
+            python 2.6, 2.7, or 3.x
+            NumPy, Scipy
+            pyqt4-dev-tools          #for pyuic4
+            Pyqtgraph                #Plotting library
+            pyopengl and qt-opengl   #for 3D graphics
+            iPython-qtconsole        #optional</pre>
                             <p>Now clone both the repositories <span style="color: #e12b00;"><a style="color: #e12b00;" href="https://github.com/fossasia/pslab-desktop-apps" target="_blank">pslab-desktop-apps</a></span> and <span style="color: #e12b00;"><a style="color: #e12b00;" href="https://github.com/fossasia/pslab-python" target="_blank">pslab-python</a></span> </p>
                             Libraries must be installed in the following order
-                            <p style="padding-left: 120px;">1. pslab-apps</p>
-                            <p style="padding-left: 120px;">2. pslab</p>
+                            <p style="padding-left: 20px;">1. pslab-apps</p>
+                            <p style="padding-left: 20px;">2. pslab</p>
                             To install, cd into the directories
                             <pre class="plain-readme">$ cd &lt;SOURCE_DIR&gt;</pre> and run the following (for both the repos)
                             <pre class="plain-readme">$ sudo make clean</pre>
@@ -217,16 +219,16 @@
                             <pre class="western"><span style="color: #808080;">&gt;&gt;&gt; from PSL.SENSORS import HMC5883L <span style="color: #666699;">#A 3-axis magnetometer</span>
 &gt;&gt;&gt; M = HMC5883L.connect()
 &gt;&gt;&gt; Gx,Gy,Gz = M.getRaw()
-		</span></pre>
+        </span></pre>
                             <h4>Example 1: Capturing and plotting a sine wave</h4> Connect WG1 to CH1 and run the following code.
-                            <pre><span style="color: #808080;">			&gt;&gt;&gt; from pylab import *
-			&gt;&gt;&gt; from PSL import sciencelab
-			&gt;&gt;&gt; I=sciencelab.connect()
-			&gt;&gt;&gt; I.set_gain('CH1', 3) <span style="color: #666699;"># set input CH1 to +/-4V range</span>
-			&gt;&gt;&gt; I.set_sine1(1000) <span style="color: #666699;"># generate 1kHz sine wave on output W1</span>
-			&gt;&gt;&gt; x,y = I.capture1('CH1', 1000, 10) <span style="color: #666699;"># digitize CH1 1000 times, with 10 usec interval</span>
-			&gt;&gt;&gt; plot(x,y)
-			&gt;&gt;&gt; show()</span></pre> The output of the program is here...
+                            <pre><span style="color: #808080;">         &gt;&gt;&gt; from pylab import *
+            &gt;&gt;&gt; from PSL import sciencelab
+            &gt;&gt;&gt; I=sciencelab.connect()
+            &gt;&gt;&gt; I.set_gain('CH1', 3) <span style="color: #666699;"># set input CH1 to +/-4V range</span>
+            &gt;&gt;&gt; I.set_sine1(1000) <span style="color: #666699;"># generate 1kHz sine wave on output W1</span>
+            &gt;&gt;&gt; x,y = I.capture1('CH1', 1000, 10) <span style="color: #666699;"># digitize CH1 1000 times, with 10 usec interval</span>
+            &gt;&gt;&gt; plot(x,y)
+            &gt;&gt;&gt; show()</span></pre> The output of the program is here...
                             <img class="aligncenter wp-image-3110 size-medium" src="http://blog.fossasia.org/wp-content/uploads/2016/08/sine1-750x565.png" alt="sine1" width="300" height="200" />
                             <a href="http://blog.fossasia.org/communicating-with-pocket-science-lab-via-usb-and-capturing-and-plotting-sine-waves/">
                                 <font color="#e12b00"> Read More...</font>
@@ -248,6 +250,7 @@
                         </a>
                     </div>
                     <hr>
+                </div>
                     <!--Developers and mentors Section starts -->
                     <div class="devs">
                     <div class="row">
@@ -262,8 +265,8 @@
                         <div class="col-lg-4 col-sm-6 text-center">
                             <img class="img-circle img-responsive img-center" src="img/jithin.jpg" alt="">
                             <h3>
-				                <small><a href="http://jithinbp.in/">jithinbp.in</a></small>
-				        </h3>
+                                <small><a href="http://jithinbp.in/">jithinbp.in</a></small>
+                        </h3>
                         </div>
                         <div class="col-lg-8">
                             <h3 id="jithin">Jithin B P</h3>
@@ -277,8 +280,8 @@
                         <div class="col-lg-4 col-sm-6 text-center">
                             <img class="img-circle img-responsive img-center" src="img/gnovi.jpeg" alt="">
                             <h3>
-				<small><a href="http://gnovi.in">gnovi.in</a></small>
-				</h3>
+                <small><a href="http://gnovi.in">gnovi.in</a></small>
+                </h3>
                         </div>
                         <div class="col-lg-8">
                             <h3 id="praveen">Praveen Patil</h3>
@@ -288,7 +291,7 @@
                     </div>
                     <hr>
 
-		    <!-- Developer Three -->
+            <!-- Developer Three -->
                     <div class="row">
                         <div class="col-lg-4 col-sm-6 text-center">
                             <img class="img-circle img-responsive img-center" src="img/asitavas.jpg" alt="">
@@ -323,8 +326,8 @@
                         <div class="col-lg-4 col-sm-6 text-center">
                             <img class="img-circle img-responsive img-center" src="img/vivek.png" alt="">
                             <h3>
-				<small><a href="https://www.linkedin.com/in/viveksb007/">viveksb007</a></small>
-				</h3>
+                <small><a href="https://www.linkedin.com/in/viveksb007/">viveksb007</a></small>
+                </h3>
                         </div>
                         <div class="col-lg-8">
                             <h3 id="vivek">Vivek Singh Bhadauria</h3>
@@ -361,8 +364,8 @@
                         <div class="col-lg-4 col-sm-6 text-center">
                             <img class="img-circle img-responsive img-center" src="img/ajith.jpg" alt="">
                             <h3>
-				<small><a href="http://expeyes.in">ExpEYES</a></small>
-				</h3>
+                <small><a href="http://expeyes.in">ExpEYES</a></small>
+                </h3>
                         </div>
                         <div class="col-lg-8">
                             <h3 id="">Dr. Ajith Kumar B P</h3>
@@ -377,8 +380,8 @@
                         <div class="col-lg-4 col-sm-6 text-center">
                             <img class="img-circle img-responsive img-center" src="img/hpdang.jpeg" alt="">
                             <h3>
-				<small><a href="http://blog.fossasia.org/author/hong-phuc/">FOSSASIA</a></small>
-				</h3>
+                <small><a href="http://blog.fossasia.org/author/hong-phuc/">FOSSASIA</a></small>
+                </h3>
                         </div>
                         <div class="col-lg-8">
                             <h3 id="hongphuc">Hong Phuc Dang</h3>
@@ -393,8 +396,8 @@
                         <div class="col-lg-4 col-sm-6 text-center">
                             <img class="img-circle img-responsive img-center" src="img/mario.jpeg" alt="">
                             <h3>
-				<small><a href="http://blog.fossasia.org/author/mario-behling/">FOSSASIA Blog</a></small>
-				</h3>
+                <small><a href="http://blog.fossasia.org/author/mario-behling/">FOSSASIA Blog</a></small>
+                </h3>
                         </div>
                         <div class="col-lg-8">
                             <h3 id="mario">Mario Behling</h3>
@@ -409,8 +412,8 @@
                         <div class="col-lg-4 col-sm-6 text-center">
                             <img class="img-circle img-responsive img-center" src="img/lorenz.jpeg" alt="">
                             <h3>
-				<small><a href="https://github.com/lorenzgerber">Lorenz Gerber</a></small>
-				</h3>
+                <small><a href="https://github.com/lorenzgerber">Lorenz Gerber</a></small>
+                </h3>
                         </div>
                         <div class="col-lg-8">
                             <h3 id="lorenz">Lorenz Gerber</h3>
@@ -425,8 +428,8 @@
                         <div class="col-lg-4 col-sm-6 text-center">
                             <img class="img-circle img-responsive img-center" src="img/MrGI_small.jpg" alt="Mr Gi Soong Chee">
                             <h3>
-				<small><a href="https://github.com/dhsgisc">Gi Soong Chee</a></small>
-				</h3>
+                <small><a href="https://github.com/dhsgisc">Gi Soong Chee</a></small>
+                </h3>
                         </div>
                         <div class="col-lg-8">
                             <h3 id="gisoong">Gi Soong Chee</h3>
@@ -441,8 +444,8 @@
                         <div class="col-lg-4 col-sm-6 text-center">
                             <img class="img-circle img-responsive img-center" src="img/georges.jpeg" alt="">
                             <h3>
-				<small><a href="https://github.com/georgesk">Georges</a></small>
-				</h3>
+                <small><a href="https://github.com/georgesk">Georges</a></small>
+                </h3>
                         </div>
                         <div class="col-lg-8">
                             <h3 id="georges">Georges Khazandar</h3>
@@ -605,60 +608,60 @@
 <div class="container">
 
   <div class="col-lg-6 footer-links">
-		<h2>Contact Us</h2>
-		<hr color="white">
+        <h2>Contact Us</h2>
+        <hr color="white">
 
     <div>
-			<i class="fa fa-info-circle icon" aria-hidden="true"></i> PSLab | <a href="http://fossasia.org">FOSSASIA</a> |<a href="privacy.html"> Privacy</a> 
-	</div>
+            <i class="fa fa-info-circle icon" aria-hidden="true"></i> PSLab | <a href="http://fossasia.org">FOSSASIA</a> |<a href="privacy.html"> Privacy</a> 
+    </div>
 
     <div>
-  		<i class="fa fa-envelope icon" aria-hidden="true"></i>
-  		<a href="mailto: pslab@fossasia.org">pslab@fossasia.org</a>
-		</div>
+        <i class="fa fa-envelope icon" aria-hidden="true"></i>
+        <a href="mailto: pslab@fossasia.org">pslab@fossasia.org</a>
+        </div>
 
     <div>
-  		<i class="fa fa-group icon" aria-hidden="true"></i>
-  		<a href="https://groups.google.com/forum/#!forum/pslab-fossasia">Mailing List</a>
-		</div>
+        <i class="fa fa-group icon" aria-hidden="true"></i>
+        <a href="https://groups.google.com/forum/#!forum/pslab-fossasia">Mailing List</a>
+        </div>
 
     <div class="slack">
-			<i class="fa fa-comments-o icon" aria-hidden="true"></i>
- 			<a href=" https://gitter.im/fossasia/pslab">PSLab Gitter Channel</a>
-		</div>
+            <i class="fa fa-comments-o icon" aria-hidden="true"></i>
+            <a href=" https://gitter.im/fossasia/pslab">PSLab Gitter Channel</a>
+        </div>
   </div>
 
-	<div class="col-lg-6 text-center joinus">
-		<h2>Be Part Of The Community</h2>
-		<hr color="white">
+    <div class="col-lg-6 text-center joinus">
+        <h2>Be Part Of The Community</h2>
+        <hr color="white">
 
-		<span>
+        <span>
       <a target="_blank" href="https://twitter.com/pslabapp">
-				<span class="fa-stack fa-lg">
-					<i class="fa fa-twitter fa-stack-1x" style="z-index:2;"></i>
-					<i class="fa fa-circle fa-stack-2x"></i>
-				</span>
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-twitter fa-stack-1x" style="z-index:2;"></i>
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                </span>
       </a>
     </span>
 
-		<span>
-    	<a href="https://github.com/fossasia?utf8=✓&q=pslab">
-    		<span class="fa-stack fa-lg">
-    			<i class="fa fa-github fa-stack-1x" style="z-index:2;"></i>
-					<i class="fa fa-circle fa-stack-2x"></i>
-  			</span>
-			</a>
-		</span>
+        <span>
+        <a href="https://github.com/fossasia?utf8=✓&q=pslab">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-github fa-stack-1x" style="z-index:2;"></i>
+                    <i class="fa fa-circle fa-stack-2x"></i>
+            </span>
+            </a>
+        </span>
 
-		<span>
+        <span>
       <a target="_blank" href="https://www.facebook.com/fossasia/">
         <span class="fa-stack fa-lg">
           <i class="fa fa-facebook fa-stack-1x" style="z-index:2;"></i>
-					<i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-circle fa-stack-2x"></i>
         </span>
       </a>
     </span>
-	</div>
+    </div>
 
 </div>
 </footer>
@@ -687,3 +690,5 @@
 </body>
 
 </html>
+
+
