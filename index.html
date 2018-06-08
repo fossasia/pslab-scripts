@@ -182,14 +182,14 @@
                                 <p>To install PSLab for Desktop PCs on Debian based Gnu/Linux system, the following dependencies must be installed.
                             </div>
                             <pre><strong><span style="color: #333333;">Dependencies</span></strong>
-			============
-			PyQt 4.7+, PySide, or PyQt5
-			python 2.6, 2.7, or 3.x
-			NumPy, Scipy
-			pyqt4-dev-tools          #for pyuic4
-			Pyqtgraph                #Plotting library
-			pyopengl and qt-opengl   #for 3D graphics
-			iPython-qtconsole        #optional</pre>
+============
+PyQt 4.7+, PySide, or PyQt5
+python 2.6, 2.7, or 3.x
+NumPy, Scipy
+pyqt4-dev-tools          #for pyuic4
+Pyqtgraph                #Plotting library
+pyopengl and qt-opengl   #for 3D graphics
+iPython-qtconsole        #optional</pre>
                             <p>Now clone both the repositories <span style="color: #e12b00;"><a style="color: #e12b00;" href="https://github.com/fossasia/pslab-desktop-apps" target="_blank">pslab-desktop-apps</a></span> and <span style="color: #e12b00;"><a style="color: #e12b00;" href="https://github.com/fossasia/pslab-python" target="_blank">pslab-python</a></span> </p>
                             Libraries must be installed in the following order
                             <p style="padding-left: 120px;">1. pslab-apps</p>
@@ -219,14 +219,14 @@
 &gt;&gt;&gt; Gx,Gy,Gz = M.getRaw()
 		</span></pre>
                             <h4>Example 1: Capturing and plotting a sine wave</h4> Connect WG1 to CH1 and run the following code.
-                            <pre><span style="color: #808080;">			&gt;&gt;&gt; from pylab import *
-			&gt;&gt;&gt; from PSL import sciencelab
-			&gt;&gt;&gt; I=sciencelab.connect()
-			&gt;&gt;&gt; I.set_gain('CH1', 3) <span style="color: #666699;"># set input CH1 to +/-4V range</span>
-			&gt;&gt;&gt; I.set_sine1(1000) <span style="color: #666699;"># generate 1kHz sine wave on output W1</span>
-			&gt;&gt;&gt; x,y = I.capture1('CH1', 1000, 10) <span style="color: #666699;"># digitize CH1 1000 times, with 10 usec interval</span>
-			&gt;&gt;&gt; plot(x,y)
-			&gt;&gt;&gt; show()</span></pre> The output of the program is here...
+                            <pre><span style="color: #808080;">&gt;&gt;&gt; from pylab import *
+&gt;&gt;&gt; from PSL import sciencelab
+&gt;&gt;&gt; I=sciencelab.connect()
+&gt;&gt;&gt; I.set_gain('CH1', 3) <span style="color: #666699;"># set input CH1 to +/-4V range</span>
+&gt;&gt;&gt; I.set_sine1(1000) <span style="color: #666699;"># generate 1kHz sine wave on output W1</span>
+&gt;&gt;&gt; x,y = I.capture1('CH1', 1000, 10) <span style="color: #666699;"># digitize CH1 1000 times, with 10 usec interval</span>
+&gt;&gt;&gt; plot(x,y)
+&gt;&gt;&gt; show()</span></pre> The output of the program is here...
                             <img class="aligncenter wp-image-3110 size-medium" src="http://blog.fossasia.org/wp-content/uploads/2016/08/sine1-750x565.png" alt="sine1" width="300" height="200" />
                             <a href="http://blog.fossasia.org/communicating-with-pocket-science-lab-via-usb-and-capturing-and-plotting-sine-waves/">
                                 <font color="#e12b00"> Read More...</font>
