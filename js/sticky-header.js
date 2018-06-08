@@ -2,14 +2,14 @@ $(document).ready(function(){
 	$("#labs-tab").on("click",function(){window.location.href = "http://labs.fossasia.org";})
 
 	var stickyNavTop = $('#sticky-navbar').offset().top;
-
 	var stickyNavBar = function(){
 	var scrollTop = $(window).scrollTop();
 
 	if (scrollTop > stickyNavTop) {
+		
 	    $('#sticky-navbar').addClass('sticky');
 	} else {
-	    $('#sticky-navbar').removeClass('sticky');
+		$('#sticky-navbar').removeClass('sticky');
 	}
 
 	// This runs only one time i.e., when page loads for the first time.
@@ -20,7 +20,7 @@ $(document).ready(function(){
 		if (scrollTop > 60) {
 			$("#light-logo").hide();
 			$("#dark-logo").show();
-			$("#dark-logo").css("display", "block");
+			//$("#dark-logo").css("display", "block");
 			$('#sticky-navbar').addClass('sticked');
 		} else {
 			$("#dark-logo").hide();
@@ -32,7 +32,7 @@ $(document).ready(function(){
 		// $("#fossasia-link").show();
 		$("#light-logo").hide();
 		$("#dark-logo").show();
-		$("#dark-logo").css("display", "block");
+		//$("#dark-logo").css("display", "block");
 	}
 	};
 
@@ -45,7 +45,7 @@ $(document).ready(function(){
 			if ($(window).scrollTop() > 60) {
 				$("#light-logo").hide();
 				$("#dark-logo").show();
-				$("#dark-logo").css("display", "block");
+				//$("#dark-logo").css("display", "block");
 				$('#sticky-navbar').addClass('sticked');
 			}else {
 				$("#dark-logo").hide();
@@ -56,7 +56,7 @@ $(document).ready(function(){
 			// $("#fossasia-link").show();
 			$("#light-logo").hide();
 			$("#dark-logo").show();
-			$("#dark-logo").css("display", "block");
+			//$("#dark-logo").css("display", "block");
 		}
 	})
 
