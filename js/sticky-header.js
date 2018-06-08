@@ -12,25 +12,53 @@ $(document).ready(function(){
 	    $('#sticky-navbar').removeClass('sticky');
 	}
 
-	if (scrollTop > 60) { 
-		$("#dark-logo").show();
+	// This runs only one time i.e., when page loads for the first time.
+	// After page is loaded, this code doesn't observe window's width changes
+	if($( window ).width() > 776){
+		// $("#fossasia-link").hide();
+
+		if (scrollTop > 60) {
+			$("#light-logo").hide();
+			$("#dark-logo").show();
+			$("#dark-logo").css("display", "block");
+			$('#sticky-navbar').addClass('sticked');
+		} else {
+			$("#dark-logo").hide();
+			$("#light-logo").show();
+			$('#sticky-navbar').removeClass('sticked');
+		}
+
+	}else if($( window ).width() < 776){
+		// $("#fossasia-link").show();
 		$("#light-logo").hide();
-	    $('#sticky-navbar').addClass('sticked');
-	} else {
-		$("#dark-logo").hide();
-		$("#light-logo").show();
-	    $('#sticky-navbar').removeClass('sticked');
+		$("#dark-logo").show();
+		$("#dark-logo").css("display", "block");
 	}
 	};
 
-	if($( window ).width() > 776){
-		$("#fossasia-link").hide();
 
-	}else if($( window ).width() < 776){
-		$("#fossasia-link").show();
-		$("#light-logo").remove();
-		$("#dark-logo").remove();
-	}
+	// Checks for width and scrollTop every time window's width changes
+	$(window).resize(() => {
+		if($( window ).width() > 776){
+			// $("#fossasia-link").hide();
+			
+			if ($(window).scrollTop() > 60) {
+				$("#light-logo").hide();
+				$("#dark-logo").show();
+				$("#dark-logo").css("display", "block");
+				$('#sticky-navbar').addClass('sticked');
+			}else {
+				$("#dark-logo").hide();
+				$("#light-logo").show();
+				$('#sticky-navbar').removeClass('sticked');
+			}
+		}else if($( window ).width() < 776){
+			// $("#fossasia-link").show();
+			$("#light-logo").hide();
+			$("#dark-logo").show();
+			$("#dark-logo").css("display", "block");
+		}
+	})
 
 	stickyNavBar();
 
