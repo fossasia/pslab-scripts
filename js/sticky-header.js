@@ -20,7 +20,7 @@ $(document).ready(function(){
 		if (scrollTop > 60) {
 			$("#light-logo").hide();
 			$("#dark-logo").show();
-			$("#dark-logo").css("display", "block");
+			$("#dark-logo").css("display", "inline-block");
 			$('#sticky-navbar').addClass('sticked');
 		} else {
 			$("#dark-logo").hide();
