@@ -15,7 +15,12 @@ This repository is used for tracking website issues of pslab.io. PSLab is a tiny
 ## Contribution 
 
 * Fork the repo from [pslab.io](https://github.com/fossasia/pslab.io).
-* Clone the repo using the following command : ```git clone https://github.com/<username>/pslab.io.git```.
+
+* Clone the repo
+  ```
+  git clone https://github.com/<username>/pslab.io.git
+  ```
+
 * Create a branch specific to the issue you are working on.
   ```
   git checkout -b update-readme-file
@@ -24,12 +29,15 @@ This repository is used for tracking website issues of pslab.io. PSLab is a tiny
     your branch `update-xxx` or `fix-xxx`. The `xxx` is a short
     description of the changes you're making. Examples include `update-readme` or
     `fix-typo-on-contribution-md`.
+
 * After working on the changes , use git to add , commit and push all the changes to your respective branch.
+
 * Submit a pull request :
   Within GitHub, visit this main repository and you should see a banner
     suggesting to make a pull request. While you're writing up the pull
     request, you can add `Closes #XXX` in the message body where `#XXX` is the
     issue you're fixing.
+    
 > Additional Note:  When you're submitting a PR for a UI-related issue, add a screenshot of your change or a link to a deployment where it can be tested out along with your PR.
 
 ## Communication
