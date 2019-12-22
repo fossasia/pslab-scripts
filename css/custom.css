@@ -136,3 +136,6 @@ footer a:hover{
 .icon{
   padding-right: 5px;
 }
+footer span {
+  margin: 2px;
+}
