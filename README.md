@@ -1,6 +1,6 @@
-# PSLab Sister
+# PSLab
 
-This repo is used for the PSLab Sister device that is being developed using ARM chips..
+This repo is used for scripts and operators to run and collect data of specific sensors connected with the PSLab.
 
 [![Gitter](https://badges.gitter.im/fossasia/pslab.svg)](https://gitter.im/fossasia/pslab-sister?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Twitter Follow](https://img.shields.io/twitter/follow/pslabio.svg?style=social&label=Follow&maxAge=2592000?style=flat-square)](https://twitter.com/pslabio)
