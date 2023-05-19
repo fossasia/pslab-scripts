@@ -15,15 +15,22 @@ experiment_options = { # item_name : [function_name, unit]
     "light"     : [measure_light_intensity, "lux"],
     "temp"      : [measure_temperature, "°C"]
     }
+
+def get_pslab(experiment_type):
+    if experiment_type == "co2":
+        return CO2_Sensor()
+    else:
+        return pslab.ScienceLab()
     
-def connect_to_pslab():
+def connect_to_pslab(experiment_type):
     """ Establishes the connection to the PSLab. """
     try:
-        psl = pslab.ScienceLab()
+       psl = get_pslab(experiment_type)
     except serial.SerialException: # device not found
         time.sleep(1)
         try:
-            psl = pslab.ScienceLab() # retry: usually it just needs a second chance
+            # retry: usually it just needs a second chance
+            psl = get_pslab(experiment_type)
         except serial.SerialException: # give up, in case that again did not work
             print("PSLab cannot be accessed.")
             return None
@@ -32,12 +39,10 @@ def connect_to_pslab():
 def get_data_pslab(connection, experiment_type):
     """ Periodically fetches measurements from the sensor and forwards them via the pipeline. """
     while True:
-        psl = connect_to_pslab()
+        psl = connect_to_pslab(experiment_type)
         if psl is None:
             return None # failed
         while True:
-            if experiment_type == "co2":
-                psl = CO2_Sensor()
             measurement = experiment_options[experiment_type][0](psl)
             if measurement != 0:
                 connection.send(measurement)
