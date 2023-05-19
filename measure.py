@@ -5,7 +5,7 @@ import serial
 from sensors.ccs811_co2 import measure_co2
 from sensors.ao03_oxygen import measure_oxygen
 from sensors.gl5528_light import measure_light_intensity
-from sensors.hdc1080_temp import measure_temperature
+from sensors.lm35_temp import measure_temperature
 
 MEASURING_INTERVAL = 1 # in seconds
 
