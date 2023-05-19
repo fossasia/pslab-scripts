@@ -22,7 +22,6 @@ class CO2_Sensor:
         except serial.SerialException:
             return 0 # measurement is still continued, even if an exception occurred (usually just a temporary error)
         CO2e = ret['eCO2']
-        print(CO2e)
         return CO2e
     
 def measure_co2(object):
