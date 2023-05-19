@@ -2,7 +2,7 @@ import time
 import pslab
 import serial
 
-from sensors.ccs811_co2 import measure_co2
+from sensors.ccs811_co2 import CO2_Sensor, measure_co2
 from sensors.ao03_oxygen import measure_oxygen
 from sensors.gl5528_light import measure_light_intensity
 from sensors.lm35_temp import measure_temperature
@@ -36,6 +36,8 @@ def get_data_pslab(connection, experiment_type):
         if psl is None:
             return None # failed
         while True:
+            if experiment_type == "co2":
+                psl = CO2_Sensor()
             measurement = experiment_options[experiment_type][0](psl)
             if measurement != 0:
                 connection.send(measurement)

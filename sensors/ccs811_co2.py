@@ -1,31 +1,29 @@
-#!/usr/bin/python3
-# pslab-scripts/sensors/ccs811_co2.py.py
-
 import time
-
+import serial
 from pslab.external.ccs811 import CCS811
-dev = CCS811()
-time.sleep(0.05)
 
+class CO2_Sensor:
+    """ Using the CCS811 with its custom driver to retrieve the CO2e value of the air. """
+    dev = CCS811()
 
-print('dev.appStart()')
-dev.appStart()
-sleep_time = 1
-print(f"sleep {sleep_time} seconds")
-time.sleep(sleep_time)
+    def __init__(self):
+        time.sleep(0.05)
+        self.dev.appStart()
+        time.sleep(1)
+        self.dev.setMeasureMode(CCS811.MODE_CONTINUOUS)
+        # skip the first 4 results, which are all zeros
+        for _ in range(4):
+            time.sleep(1)
+            self.dev.measure()
 
-# time.sleep(1)
-print("dev.setMeasureMode(CCS811.MODE_CONTINUOUS)")
-dev.setMeasureMode(CCS811.MODE_CONTINUOUS)
-
-# skip the first 4 results, which are all zeros
-for i in range(4):
-    time.sleep(1)
-    dev.measure()
-
-while (1):
-    time.sleep(1)
-    ret = dev.measure()
-    status = ret['status']
-    print("eCO2 = %f, eTVOC = %f)" % (ret['eCO2'], ret['eTVOC']))
-    print(dev.decodeStatus(status))
+    def measure_co2(self):
+        try:
+            ret = self.dev.measure()
+        except serial.SerialException:
+            return 0 # measurement is still continued, even if an exception occurred (usually just a temporary error)
+        CO2e = ret['eCO2']
+        print(CO2e)
+        return CO2e
+    
+def measure_co2(object):
+    return object.measure_co2()
