@@ -1,10 +1,8 @@
 import serial
 
-""" AO-03 wiring: GND to GND, "out" to CH1, 'VCC' to VDD (3.3V) """
-
 def measure_oxygen(psl):
     """
-    Measuring the percentage of oxygen in the air in by integrating the AO-03
+    Measuring the percentage of oxygen in the air by integrating the AO-03 sensor
     in a custom amplifier circuit and transforming the output voltage.
     """
     try:

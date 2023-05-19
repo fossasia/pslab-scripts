@@ -4,14 +4,12 @@ import serial
 V_IN = 3.3
 R2 = 10000 # ohm of the second resistor
 
-""" GL5528 wiring: '-' to GND, middle pin to VDD (3.3V), 'S' to CH1 """
-
 def measure_light_intensity(psl):
     """
     Measuring the light intensity in lux by integrating the GL5528
     photo-resistor into a voltage divider circuit and transforming the output voltage.
     The lux formula is derived by measuring r1 at known levels of light intensity and deriving
-    the paramters a&b to form a logarithmic function (as described in the sensors datasheet).
+    the parameters a&b to form a logarithmic function (as described in the sensor's data sheet).
     """
     try:
         v_out = psl.multimeter.measure_voltage("CH1")
