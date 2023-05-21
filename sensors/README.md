@@ -1,16 +1,16 @@
 Currently the following sensors are supported by specific firmware, however [others](https://pslab.io/sensors/) could be added later on.
 
-## CO~2~e Sensor: [CCS811](https://cdn.sparkfun.com/assets/learn_tutorials/1/4/3/CCS811_Datasheet-DS000459.pdf)
+## CO<sub>2</sub>e Sensor: [CCS811](https://cdn.sparkfun.com/assets/learn_tutorials/1/4/3/CCS811_Datasheet-DS000459.pdf)
 
-This digital sensor is embedded on the [CJMCU-8118]() circuit board and powered by a custom [driver](https://github.com/fossasia/pslab-python/tree/development/pslab/external) that uses the sensors I^2^C protocol.
+This digital sensor is embedded on the [CJMCU-8118]() circuit board and powered by a custom [driver](https://github.com/fossasia/pslab-python/tree/development/pslab/external) that uses the sensors I<sup>2</sup>C protocol.
 
-The CCS811 measures the [CO~2~e](https://klima.com/blog/what-is-co2e/) ("CO2 equivalent") value of the surrounding air, measured in particles per million (ppm). This value also incorporates the levels of methane (CH~4~), nitrous dioxide (N~2~O) and other synthetic gases, besides the regular CO~2~ measurement which usually makes up about 75% of the CO~2~e. It is therefore used by environmental scientists nowadays to give more accurate measurements about the current levels of emissions in the air.
+The CCS811 measures the [CO<sub>2</sub>e](https://klima.com/blog/what-is-co2e/) ("CO2 equivalent") value of the surrounding air, measured in particles per million (ppm). This value also incorporates the levels of methane (CH<sub>4</sub>), nitrous dioxide (N<sub>2</sub>O) and other synthetic gases, besides the regular CO<sub>2</sub> measurement which usually makes up about 75% of the CO<sub>2</sub>e. It is therefore used by environmental scientists nowadays to give more accurate measurements about the current levels of emissions in the air.
 
-As emissions vary depending on the air's temperature and humidity, the CCS811 sensor has inbuilt temperature and moisture sensors. It uses those to offset the variation of the measuring conditions to the optimal lab conditions. However, it is important to notice that the sensor has a lower limit of 400ppm CO~2~e that can be detected.
+As emissions vary depending on the air's temperature and humidity, the CCS811 sensor has inbuilt temperature and moisture sensors. It uses those to offset the variation of the measuring conditions to the optimal lab conditions. However, it is important to notice that the sensor has a lower limit of 400ppm CO<sub>2</sub>e that can be detected.
 
 ## Oxygen Sensor: [AO-03](http://www.aosong.com/userfiles/files/media/Datasheet%20AO-03.pdf)
 
-The analoge AO-03 sensor measures the O~2~ content of the surrounding air in percent(%). It is embedded in a [custom circuit board](../docs/ao-03_amplifier_circuit_design/) that is amplifying the measured voltage, as the changes in oxygen levels are usually just very slight and therefore the changes in voltage are also only minimal.
+The analoge AO-03 sensor measures the O<sub>2</sub> content of the surrounding air in percent(%). It is embedded in a [custom circuit board](../docs/ao-03_amplifier_circuit_design/) that is amplifying the measured voltage, as the changes in oxygen levels are usually just very slight and therefore the changes in voltage are also only minimal.
 
 ![Schematic of the amplifier board](../docs/images/ao-03_amplifier_circuit_schematic.png)
 Custom designed amplifying circuit board for the AO-03 oxygen sensor
@@ -26,7 +26,7 @@ This analog thermometer can measure temperatures between −55°C and 150°C and
 ## Connecting the Sensors
 ![Color coded sensor connections](../docs/images/psLabv5_coloured_pins.png)
 
-- **CO~2~e** -> **blue** pins: 'VCC' to the PSLab's VDD (3.3V power supply), 'GND' to PSLab's GND, 'SLC' to the PSLab's SLC (serial clock needed for the I^2^C protocol) and 'SDA' to the PSLab's SDA (serial data needed for the I^2^C protocol)
-- **Oxygen** -> **orange** pins: 'GND' to the PSLab's GND, 'OUT' to CH1 (analog input to read voltages in range [-16 V, +16 V]) and 'VCC' to the PSLab's VDD (3.3V power supply)
-- **Light Intensity** -> **green** pins: '-' to the PSLab's GND, the middle pin to the PSLab's VDD (3.3V power supply) and 'S' to CH1 (analog input to read voltages in range [-16 V, +16 V])
-- **Temperature** -> **purple** pins: left side to the PSLab's VCC (5V power supply), middle one to CH1 (analog input to read voltages in range [-16 V, +16 V]) and right side to the PSLab's GND [facing the flat side and having the sensor's pins face down]
+- **CO<sub>2</sub>e: blue pins.** 'VCC' to the PSLab's VDD (3.3V power supply), 'GND' to PSLab's GND, 'SLC' to the PSLab's SLC (serial clock needed for the I^2^C protocol) and 'SDA' to the PSLab's SDA (serial data needed for the I^2^C protocol).
+- **Oxygen: orange pins.** 'GND' to the PSLab's GND, 'OUT' to CH1 (analog input to read voltages in range [-16 V, +16 V]) and 'VCC' to the PSLab's VDD (3.3V power supply).
+- **Light Intensity: green pins.** '-' to the PSLab's GND, the middle pin to the PSLab's VDD (3.3V power supply) and 'S' to CH1 (analog input to read voltages in range [-16 V, +16 V]).
+- **Temperature: purple pins.** left side to the PSLab's VCC (5V power supply), middle one to CH1 (analog input to read voltages in range [-16 V, +16 V]) and right side to the PSLab's GND [facing the flat side and having the sensor's pins face down].

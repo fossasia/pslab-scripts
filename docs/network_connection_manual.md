@@ -1,4 +1,4 @@
-# Connecting a User Device (PC or Phone) to the PSLab Sensorbox' File Server 
+# Connecting a User Device (PC or Phone) to the File Server 
 
 After the PSLab Sensorbox is connected to electricity, the WiFi Hotspot is automatically initialized. Once the users PC/ Phone is now connected to this WiFi Hotspot, a formal network connection can be initialized to access the PSLab Sensorbox' file server.
 
