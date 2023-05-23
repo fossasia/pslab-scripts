@@ -10,10 +10,12 @@ As emissions vary depending on the air's temperature and humidity, the CCS811 se
 
 ## Oxygen Sensor: [AO-03](http://www.aosong.com/userfiles/files/media/Datasheet%20AO-03.pdf)
 
-The analog AO-03 sensor measures the O<sub>2</sub> content of the surrounding air in percent (%). It is embedded in a [custom circuit board](../docs/ao-03_amplifier_circuit_design/) that is amplifying the measured voltage, because the changes in oxygen levels are usually just very slight and therefore the changes in voltage are also only minimal.
+The analog AO-03 sensor measures the O<sub>2</sub> content of the surrounding air in percent (%). It is embedded in a custom circuit board that is amplifying the measured voltage, because the changes in oxygen levels are usually just very slight and therefore the changes in voltage are also only minimal.
 
-<img src="../docs/images/ao-03_amplifier_circuit_schematic.png" alt="Schematic of the amplifier board" width="80%">
-Custom designed amplifying circuit board for the AO-03 oxygen sensor
+<p align="center">
+    <img src="../docs/images/ao-03_amplifier_circuit_schematic.png" alt="Schematic of the amplifier board" width="70%">
+    <p>[Custom designed](../docs/ao-03_amplifier_circuit_design/) amplifying circuit board for the AO-03 oxygen sensor.</p>
+</p>
 
 ## Light Intensity Sensor: [GL5528](https://pi.gate.ac.uk/pages/airpi-files/PD0001.pdf)
 
@@ -24,7 +26,9 @@ A light sensitive photo-resistor is used to measure the luminous intensity of th
 This analog thermometer can measure temperatures between −55°C and 150°C. It guarantees an accuracy of +/- 1°C over the whole range.
 
 ## Connecting the Sensors
-![Color coded sensor connections](../docs/images/psLabv5_coloured_pins.png)
+<p align="center">
+    <img src="../docs/images/psLabv5_coloured_pins.png" alt="Color coded sensor connections" width="85%">
+</p>
 
 - **CO<sub>2</sub>e: blue pins.** 'VCC' to the PSLab's VDD (3.3V power supply), 'GND' to the PSLab's GND, 'SLC' to the PSLab's SLC (serial clock needed for the I²C protocol) and 'SDA' to the PSLab's SDA (serial data needed for the I²C protocol).
 - **Oxygen: orange pins.** 'GND' to the PSLab's GND, 'OUT' to the PSLab's CH1 (analog input to read voltages in range [-16 V, +16 V]) and 'VCC' to the PSLab's VDD (3.3V power supply).
