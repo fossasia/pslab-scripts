@@ -31,19 +31,15 @@ Additionally the following **features** are implemented:
 
 Once a power source (power bank or cord to electricity outlet) is connected to the PSLab sensor box and the device has fully booted, a new measurement is automatically started. The measurement results are now collected in a CSV and can be exported in real time from the file server via WiFi:
 1. Connect your computer or smartphone to the WiFi Hotspot with the corresponding name (like "PSLab.Light.01"). A detailed manual on how to connect for the first time can be found [here](/docs/network_connection_manual.md).
-2. Once connected, the PSLab will appear in the "Network Devices" section. Access the "data" folder and fetch some CSV measurement data file. This file can for example be opened by Excel or just a normal text editor. The current measurement file is updated automatically every few seconds.
-3. Analysis tasks can now be performed on this data, for example importing it into [Jupyter Notebook](https://jupyter.org/).
-
-
+2. Once connected, the PSLab will appear in the "Network Devices" section.
 <p align="center">
     <img src="./docs/images/access_network_folder.png" alt="Access network device" width="70%">
 </p>
-*Accessing the PSLab as a network device.*
+Access the "data" folder and fetch some CSV measurement data file. This file can for example be opened by Excel or just a normal text editor. The current measurement file is updated automatically every few seconds.
 <p align="center">
     <img src="./docs/images/sample_csv.png" alt="Sample CSV" width="50%">
 </p>
-*Sample CSV file with measurement data.*
-
+3. Analysis tasks can now be performed on this data, for example importing it into [Jupyter Notebook](https://jupyter.org/).
 
 To trigger the shut down process of the PSLab sensor box, please press the attached button for one to two seconds.
 
