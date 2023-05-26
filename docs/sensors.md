@@ -19,8 +19,8 @@ The analog AO-03 sensor measures the O<sub>2</sub> content of the surrounding ai
 
 <p align="center">
     <img src="./images/ao-03_amplifier_circuit_schematic.png" alt="Schematic of the amplifier board" width="70%">
-    <p>[Custom designed](./ao-03_amplifier_circuit_design/) amplifying circuit board for the AO-03 oxygen sensor.</p>
 </p>
+*[Custom designed](./ao-03_amplifier_circuit_design/) amplifying circuit board for the AO-03 oxygen sensor.*
 
 <p align="center">
     <img src="./images/o2_sensor_connection.png" alt="Connecting the o2 sensor" width="90%">
