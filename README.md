@@ -13,7 +13,7 @@ PSLab is a tiny pocket science lab that provides an array of equipment for doing
     <img src="/docs/images/phone_connections.jpg" alt="PSLab Sensor Box" width="75%">
 </p>
 
-In this project four different experimental setups of the [PSLab v5](https://pslab.io/wp-content/uploads/PSLab-Data-Sheet.pdf) are created, each incorporating a different sensor. Besides those sensors, which are described in detail [here](/sensors/), the following **hardware components** are connected to the PSLabs:
+In this project four different experimental setups of the [PSLab v5](https://pslab.io/wp-content/uploads/PSLab-Data-Sheet.pdf) are created, each incorporating a different sensor. Details for those sensor setups can be found [here](/docs/r). Additionally, the following **hardware components** are connected to the PSLabs:
 
 - A **Raspberry Pi Zero W** to store the sensor data permanently on an SD card and at the same time make this data available via the Raspberry Pi's WiFi module. The "Zero" is especially handy here, as it is the most lightweight Raspberry Pi version.
 - A **Button** to safely shutdown the Raspberry Pi. It needs to be long pressed for at least one second in order to trigger the device's shutdown. Here, one button terminal is plugged into GPIO pin 27, while the other terminal is plugged to the ground.
@@ -31,8 +31,17 @@ Additionally the following **features** are implemented:
 
 Once a power source (power bank or cord to electricity outlet) is connected to the PSLab sensor box and the device has fully booted, a new measurement is automatically started. The measurement results are now collected in a CSV and can be exported in real time from the file server via WiFi:
 1. Connect your computer or smartphone to the WiFi Hotspot with the corresponding name (like "PSLab.Light.01"). A detailed manual on how to connect for the first time can be found [here](/docs/network_connection_manual.md).
-2. Access the "data" folder and fetch some CSV measurement data file. This file can for example be opened by Excel or just a normal text editor. The current measurement file is updated automatically every few seconds.
+2. Once connected, the PSLab will appear in the "Network Devices" section. Access the "data" folder and fetch some CSV measurement data file. This file can for example be opened by Excel or just a normal text editor. The current measurement file is updated automatically every few seconds.
 3. Analysis tasks can now be performed on this data, for example importing it into [Jupyter Notebook](https://jupyter.org/).
+
+<p align="center">
+    <img src="./docs/images/access_network_folder.png" alt="Access network device" width="70%">
+</p>
+Accessing the PSLab as a network device.
+<p align="center">
+    <img src="./docs/images/sample_csv.png" alt="Sample CSV" width="50%">
+</p>
+Sample CSV file with measurement data.
 
 To trigger the shut down process of the PSLab sensor box, please press the attached button for one to two seconds.
 
@@ -77,12 +86,13 @@ In case of unexpected errors, the logs of the startup script can be obtained by 
 ```
 📦pslab-scripts
  ┣ 📂docs                                   # Supplementary material
- ┃ ┣ 📂ao-03_amplifier_circuit_design       # Design files of the custom circuit board for the AO-03 sensor
+ ┃ ┣ 📂ao-03_amplifier_circuit_design       # [KiCad](https://www.kicad.org/) project files of the custom circuit board for the AO-03 sensor
  ┃ ┃ ┗ 📜 ...
  ┃ ┣ 📂images
+ ┃ ┃ ┣ 📜sensor_logos.svg                   # Sticker designs for the boxes (made with [Inkscape](https://inkscape.org/))
  ┃ ┃ ┗ 📜 ...
  ┃ ┣ 📜network_connection_manual.md         # Manual on how to connect a device to the PSLab's file server
- ┃ ┗ 📜sensor_logos.svg                     # Stickers for the boxes (made with Inkscape)
+ ┃ ┗ 📜sensors.md                           # Detailed descriptions of all four sensor setups
  ┣ 📂sensors                                # Contains a specific run script for every sensor
  ┃ ┣ 📜ao03_oxygen.py
  ┃ ┣ 📜ccs811_co2.py
