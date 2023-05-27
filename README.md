@@ -13,13 +13,13 @@ PSLab is a tiny pocket science lab that provides an array of equipment for doing
     <img src="/docs/images/phone_connections.jpg" alt="PSLab Sensor Box" width="75%">
 </p>
 
-In this project four different experimental setups of the [PSLab v5](https://pslab.io/wp-content/uploads/PSLab-Data-Sheet.pdf) are created, each incorporating a different sensor. Details for those sensor setups can be found [here](/docs/sensors.md). Additionally, the following **hardware components** are connected to the PSLabs:
+In this project four different experimental setups of the [PSLab v5](https://pslab.io/wp-content/uploads/PSLab-Data-Sheet.pdf) are created, each incorporating a different sensor. Details for those sensor setups can be found [here](/docs/sensors.md). In addition, the following **hardware components** are connected to the PSLabs:
 
 - A **Raspberry Pi Zero W** to store the sensor data permanently on an SD card and at the same time make this data available via the Raspberry Pi's WiFi module. The "Zero" is especially handy here, as it is the most lightweight Raspberry Pi version.
 - A **Button** to safely shutdown the Raspberry Pi. It needs to be long pressed for at least one second in order to trigger the device's shutdown. Here, one button terminal is plugged into GPIO pin 27, while the other terminal is plugged to the ground.
 - The high accuracy I²C **real time clock (RTC)** model [DS3231](https://www.analog.com/media/en/technical-documentation/data-sheets/DS3231.pdf). It contains a small battery and ensures that the device's time progresses, even if the main power source is unavailable. This RTC therefore makes timestamps in the output data possible, even during times where the PSLab sensor box can not access the internet. The five pins of this Pi HAT are plugged into pins 1 (3.3V power), 3 (SDA I²C), 5 (SCL I²C), 7 and 9 (ground) of the Raspberry Pi Zero W.
 
-Additionally the following **features** are implemented:
+The following **features** are implemented on top of that:
 - Each PSLab sensor box automatically opens its own WiFi Hotspot, once the system is connected to an energy source and finished its booting process (which may take one or two minutes).
 - Additionally, the measurement it triggered automatically after startup. This is done by a custom [systemd](https://www.raspberrypi-spy.co.uk/2015/10/how-to-autorun-a-python-script-on-boot-using-systemd/) service.
 - Each measured data point is then written into the CSV file of this measurement session. The file is structured as `<timestamp>, <measured_value>, <unit>, <item_name>`.
@@ -39,7 +39,8 @@ Access the "data" folder and fetch some CSV measurement data file. This file can
 <p align="center">
     <img src="./docs/images/sample_csv.png" alt="Sample CSV" width="50%">
 </p>
-3. Analysis tasks can now be performed on this data, for example importing it into [Jupyter Notebook](https://jupyter.org/).
+
+Analysis tasks can now be performed on this data, for example importing it into [Jupyter Notebook](https://jupyter.org/).
 
 To trigger the shut down process of the PSLab sensor box, please press the attached button for one to two seconds.
 
@@ -84,10 +85,10 @@ In case of unexpected errors, the logs of the startup script can be obtained by 
 ```
 📦pslab-scripts
  ┣ 📂docs                                   # Supplementary material
- ┃ ┣ 📂ao-03_amplifier_circuit_design       # [KiCad](https://www.kicad.org/) project files of the custom circuit board for the AO-03 sensor
+ ┃ ┣ 📂ao-03_amplifier_circuit_design       # KiCad project files of the custom circuit board for the AO-03 sensor
  ┃ ┃ ┗ 📜 ...
  ┃ ┣ 📂images
- ┃ ┃ ┣ 📜sensor_logos.svg                   # Sticker designs for the boxes (made with [Inkscape](https://inkscape.org/))
+ ┃ ┃ ┣ 📜sensor_logos.svg                   # Sticker designs for the boxes (made with Inkscape)
  ┃ ┃ ┗ 📜 ...
  ┃ ┣ 📜network_connection_manual.md         # Manual on how to connect a device to the PSLab's file server
  ┃ ┗ 📜sensors.md                           # Detailed descriptions of all four sensor setups
