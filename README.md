@@ -147,7 +147,9 @@ on the Raspberry Pi (for example `sudo python3 init_pipe.py oxygen`) and checkin
  ┃ ┃ ┣ 📜sensor_logos.svg                   # Sticker designs for the boxes (made with Inkscape)
  ┃ ┃ ┗ 📜 ...
  ┃ ┣ 📜network_connection_manual.md         # Manual on how to connect a device to the PSLab's file server
- ┃ ┗ 📜sensors.md                           # Detailed descriptions of all four sensor setups
+ ┃ ┣ 📜presentation_may28.pdf
+ ┃ ┣ 📜sensors.md                           # Detailed descriptions of all four sensor setups
+ ┃ ┗ 📜testing_manual_june12.md             # Detailed manual on how to test the prototype
  ┣ 📂sensors                                # Contains a specific run script for every sensor
  ┃ ┣ 📜ao03_oxygen.py
  ┃ ┣ 📜ccs811_co2.py

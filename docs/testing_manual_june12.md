@@ -2,10 +2,10 @@
 
 The received parcel contains four different cardboard boxes with each one device:
 
-- one PSLab Sensor Box to measure Oxygen
-- one PSLab Sensor Box to measure CO<sub>2</sub>
-- one PSLab Sensor Box to measure the temperature
-- one PSLab Sensor Box to measure light intensity in Lux
+- one PSLab Sensor Box to [measure Oxygen](./sensors.md#oxygen-sensor-ao-03)
+- one PSLab Sensor Box to [measure CO2](./sensors.md#co2e-sensor-ccs811)
+- one PSLab Sensor Box to [measure the temperature](./sensors.md#temperature-sensor-lm35)
+- one PSLab Sensor Box to [measure light intensity in Lux](./sensors.md#light-intensity-sensor-gl5528)
 
 For each of them the following steps can be executed to test their functionality:
 
@@ -16,7 +16,7 @@ USB charging connector, the sensor and the power off button. In the final versio
 three items will be exposed outside the box, however right now they are still hidden inside. Opening the plastic box can seem a bit tricky at first, but by angling out the lid from the lower edge (see the description [here](../README.md#advanced-usage)) it becomes fairly easy.
 
 <p align="center">
-    <img src="./images/exposed_connections.jpeg" alt="Exposed Connections" width="70%">
+    <img src="./images/exposed_connections.jpeg" alt="Exposed Connections" width="50%">
 </p>
 
 ## Startup and Establishing a Connection
