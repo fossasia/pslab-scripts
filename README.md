@@ -68,7 +68,7 @@ As this option provides a graphical user interface for editing and debugging, it
 
 #### Accessing the Raspberry Pi via SSH
 
-An SSH access can be more convenient, as there is no additional cabling needed.
+An [SSH access](https://itsfoss.com/ssh-into-raspberry/) can be more convenient, as there is no additional cabling needed.
 However, to establish this connection, the Raspberry Pi needs to be in the same WiFi network as the connecting laptop. If that is not the case yet, there is no way around connecting the Raspi to a monitor first, in oder to set up this WiFi connection, as the Raspberry Pi Zero W does not have a LAN port. Also, the network specific IP address of the Raspberry Pi needs to be known.
 
 As the Raspi is currently connected to its very own WiFi Hotspot, an access via SSH is easily possible:
@@ -109,7 +109,7 @@ By adjusting the experiment type parameter in the systemd service "startup.servi
 
 ### Debugging
 
-There are different levels of debugging possible, depending on the supposed location of the problem.
+As this is a hardware project, it is not unlikely that at some point in time one of the cables or other components will cause problems. To then solve this, it is important to localize the error. Here, different levels of debugging can help, depending on the supposed location of the problem.
 Some of the most useful ones are:
 
 #### Debugging Sensor Issues - On a PC
