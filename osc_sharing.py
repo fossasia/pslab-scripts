@@ -15,8 +15,8 @@ def transmit_data(connection, experiment_type, ip, port):
             help="The ip of the OSC server")
     parser.add_argument("--port", type=int, default=port,
             help="The port the OSC server is listening on")
-    args = parser.parse_args()
-    client = udp_client.SimpleUDPClient(args.ip, args.port)
+    options, unknown = parser.parse_known_args()
+    client = udp_client.SimpleUDPClient(options.ip, options.port)
 
     while True:
         data = connection.recv()
