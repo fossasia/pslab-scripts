@@ -1,6 +1,6 @@
 import time
 import serial
-from driver_ccs811 import CCS811
+from sensors.driver_ccs811 import CCS811
 
 class CO2_Sensor:
     """ Using the CCS811 with its custom driver to retrieve the CO2e value of the air. """

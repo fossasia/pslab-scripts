@@ -3,7 +3,10 @@ from pythonosc import udp_client
 
 from measure import experiment_options
 
-def transmit_data(connection, experiment_type, ip, port):
+osc_receiver_ip = "192.168.1.255"
+osc_receiver_port = 5005
+
+def transmit_data(connection, experiment_type):
     """
     This OSC client sends the current measurement data to the osc server at
     the specified ip address and port.
@@ -11,9 +14,9 @@ def transmit_data(connection, experiment_type, ip, port):
     measurements in real time.
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", default=ip,
+    parser.add_argument("--ip", default=osc_receiver_ip,
             help="The ip of the OSC server")
-    parser.add_argument("--port", type=int, default=port,
+    parser.add_argument("--port", type=int, default=osc_receiver_port,
             help="The port the OSC server is listening on")
     options, unknown = parser.parse_known_args()
     client = udp_client.SimpleUDPClient(options.ip, options.port)
