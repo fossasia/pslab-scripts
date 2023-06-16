@@ -19,5 +19,5 @@ def measure_light_intensity(psl):
     if r1 < 0:
         return 0
     else:
-        lux = math.pow(math.e, 14.3316 - 1.1713 * math.log(r1, math.e))
+        lux = math.pow(math.e, 15.8316 - 1.1213 * math.log(r1, math.e))
     return lux
