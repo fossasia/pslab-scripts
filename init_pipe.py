@@ -1,7 +1,5 @@
 import sys
 import multiprocessing
-import serial
-import time
 
 from measure import experiment_options, get_data_pslab
 from store_data import write_to_csv

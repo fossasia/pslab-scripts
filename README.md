@@ -20,18 +20,21 @@ In this project four different experimental setups of the [PSLab v5](https://psl
 - The high accuracy I²C **real time clock (RTC)** model [DS3231](https://www.analog.com/media/en/technical-documentation/data-sheets/DS3231.pdf). It contains a small battery and ensures that the device's time progresses, even if the main power source is unavailable. This RTC therefore makes timestamps in the output data possible, even during times where the PSLab sensor box can not access the internet. The five pins of this Pi HAT are plugged into pins 1 (3.3V power), 3 (SDA I²C), 5 (SCL I²C), 7 and 9 (ground) of the Raspberry Pi Zero W.
 
 The following **features** are implemented on top of that:
-- Each PSLab sensor box automatically opens its own WiFi Hotspot, once the system is connected to an energy source and finished its booting process (which may take one or two minutes).
-- Additionally, the measurement it triggered automatically after startup. This is done by a custom [systemd](https://www.raspberrypi-spy.co.uk/2015/10/how-to-autorun-a-python-script-on-boot-using-systemd/) service.
-- Each measured data point is then written into the CSV file of this measurement session. The file is structured as `<timestamp>, <measured_value>, <unit>, <item_name>`.
-- A [samba file sharing server](https://raspberrypi-guide.github.io/filesharing/filesharing-raspberry-pi) makes the folder "/home/foss/data" of the Raspberry Pi publicly available to all devices within its WiFi Hotspot. This also enables users to modify or delete the measurement data within this folder remotely via their PC or mobile phone.
-- The measurements are provided to this file sharing server in real-time, however they are also stored there permanently via the SD card. The user can thus combine the benefits of both measurement forms.
+- If not connected to a known WiFi network, each PSLab sensor box automatically opens its own WiFi Hotspot, once the system is connected to an energy source and finished its booting process (which may take one or two minutes).
+- The measurement it triggered automatically after startup. This is done by a custom [systemd](https://www.raspberrypi-spy.co.uk/2015/10/how-to-autorun-a-python-script-on-boot-using-systemd/) service.
+- Each measured data point is then either shared via the [OSC protocol](https://en.m.wikipedia.org/wiki/Open_Sound_Control), or written into the CSV file of this measurement session. The file is structured as `<timestamp>, <measured_value>, <unit>, <item_name>`.
+- A [samba file sharing server](https://raspberrypi-guide.github.io/filesharing/filesharing-raspberry-pi) makes the folder "/home/foss/data" of the Raspberry Pi publicly available to all devices within its WiFi Hotspot. This also enables users to modify or delete the CSV measurement data within this folder remotely via their PC or mobile phone. The measurements are provided to this file sharing server in real-time, however they are also stored there permanently via the SD card. The user can thus combine the benefits of both measurement forms.
 - The Raspberry Pi itself is currently running the code from the master branch this Github repository. This makes code updates easy to distribute on all devices. All PSLab sensor boxes run the exact identical code, with the only difference being the experiment type parameter with which `init_pipe.py` is called in the systemd service.
 
 ## Basic Usage
 
-Once a power source (power bank or cord to electricity outlet) is connected to the PSLab sensor box and the device has fully booted, a new measurement is automatically started. The measurement results are now collected in a CSV and can be exported in real time from the file server via WiFi:
+Once a power source (power bank or cord to electricity outlet) is connected to the PSLab sensor box and the device has fully booted, a new measurement is automatically started. The measurement results are now either shared via OSC, or collected in a CSV. In either case, it is essential to have your own PC/phone connected to the same WiFi Hotspot, that the PSLab Sensor Box is connected to. This can either be a public WiFi (once that is manually set up) or the Raspi's own WiFi Hotspot with the corresponding name (like "PSLab.Light.01"). To eventually trigger the shut down process of the PSLab sensor box, please press the attached button for one to two seconds.
 
-1. Connect your computer or smartphone to the WiFi Hotspot with the corresponding name (like "PSLab.Light.01"). A detailed manual on how to connect for the first time can be found [here](/docs/network_connection_manual.md).
+### Accessing the CSV Measurements
+
+The CSV measurements can be exported in real time from the file server via WiFi:
+
+1. A detailed manual on how to connect to the devices file server for the first time can be found [here](/docs/network_connection_manual.md).
 2. Once connected, the PSLab will appear in the "Network Devices" section.
 <p align="center">
     <img src="./docs/images/access_network_folder.png" alt="Access network device" width="70%">
@@ -43,7 +46,44 @@ Access the "data" folder and fetch some CSV measurement data file. This file can
 
 Analysis tasks can now be performed on this data, for example importing it into [Jupyter Notebook](https://jupyter.org/).
 
-To trigger the shut down process of the PSLab sensor box, please press the attached button for one to two seconds.
+### Receiving the OSC Messages
+
+The OSC messages are sent to the specified IP address upon startup. To receive those messages a OSC server like this is necessary:
+
+```[python]
+import argparse
+from pythonosc.dispatcher import Dispatcher
+from pythonosc import osc_server
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--ip", default="192.168.184.20")
+    parser.add_argument("--port", type=int, default=5005)
+    args = parser.parse_args()
+
+    dispatcher = Dispatcher()
+    dispatcher.map("/light", print)
+    dispatcher.map("/temp", print)
+    dispatcher.map("/co2", print)
+    dispatcher.map("/oxygen", print)
+
+    server = osc_server.ThreadingOSCUDPServer(
+        (args.ip, args.port), dispatcher)
+    server.serve_forever()
+```
+
+Please note that this setup only works if the IP address in the device's [osc_sharing.py](./osc_sharing.py), is identical to the IP address stated in the server scrips (in line 7 here) and corresponds to the laptops own IP address (obtainable by executing "ifconfig" in the terminal). This OSC server for example produces the following output when at the same time the Oxygen Sensor Box and the Light Sensor Box are sending OSC data to this IP address at port 5005:
+
+```
+/oxygen 19.65267857142857 %
+/light 83.5221792427634 lux
+/oxygen 19.638072344322342 %
+/light 84.67030397419505 lux
+/oxygen 19.638072344322342 %
+/light 84.90106661035144 lux
+/oxygen 19.608859890109887 %
+/light 85.59564368053684 lux
+```
 
 ## Advanced Usage
 
@@ -69,7 +109,7 @@ As this option provides a graphical user interface for editing and debugging, it
 #### Accessing the Raspberry Pi via SSH
 
 An [SSH access](https://itsfoss.com/ssh-into-raspberry/) can be more convenient, as there is no additional cabling needed.
-However, to establish this connection, the Raspberry Pi needs to be in the same WiFi network as the connecting laptop. If that is not the case yet, there is no way around connecting the Raspi to a monitor first, in oder to set up this WiFi connection, as the Raspberry Pi Zero W does not have a LAN port. Also, the network specific IP address of the Raspberry Pi needs to be known.
+However, to establish this connection, the Raspberry Pi needs to be in the same WiFi network as the connecting laptop. If that is not the case yet, there is no way around connecting the Raspi to a monitor first, in oder to set up this WiFi connection, as the Raspberry Pi Zero W does not have a LAN port. Also, the network specific IP address of the Raspberry Pi needs to be known. It can be retrieved by executing the command "ifconfig" in the Raspi's terminal while having it connected to a monitor. The IP address can then usually be found in the "wlan0" paragraph and is formatted in a "000.000.000.000" pattern.
 
 As the Raspi is currently connected to its very own WiFi Hotspot, an access via SSH is easily possible:
 
@@ -149,14 +189,16 @@ on the Raspberry Pi (for example `sudo python3 init_pipe.py oxygen`) and checkin
  ┃ ┣ 📜network_connection_manual.md         # Manual on how to connect a device to the PSLab's file server
  ┃ ┣ 📜presentation_may28.pdf
  ┃ ┣ 📜sensors.md                           # Detailed descriptions of all four sensor setups
- ┃ ┗ 📜testing_manual_june12.md             # Detailed manual on how to test the prototype
+ ┃ ┗ 📜testing_manual.md                    # Detailed manual on how to test the devices
  ┣ 📂sensors                                # Contains a specific run script for every sensor
  ┃ ┣ 📜ao03_oxygen.py
  ┃ ┣ 📜ccs811_co2.py
+ ┃ ┣ 📜driver_ccs811.py                     # Custom driver for the CCS811 sensor
  ┃ ┣ 📜gl5528_light.py
  ┃ ┗ 📜lm35_temp.py
  ┣ 📜init_pipe.py                           # Main project file
  ┣ 📜measure.py
+ ┣ 📜osc_sharing.py
  ┣ 📜store_data.py
  ┗ 📜shutdown.py                            # Script for the button logic
 ```
