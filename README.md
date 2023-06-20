@@ -72,6 +72,7 @@ if __name__ == "__main__":
     server.serve_forever()
 ```
 
+This server uses the [python-osc](https://github.com/attwad/python-osc) package to receive and decode the messages. The package can be installed by executing `pip3 install python-osc` in the PC's terminal.
 Please note that this setup only works if the IP address in the device's [osc_sharing.py](./osc_sharing.py), is identical to the IP address stated in the server scrips (in line 7 here) and corresponds to the laptops own IP address (obtainable by executing "ifconfig" in the terminal). This OSC server for example produces the following output when at the same time the Oxygen Sensor Box and the Light Sensor Box are sending OSC data to this IP address at port 5005:
 
 ```
@@ -158,8 +159,8 @@ To ensure that the PSLab itself and the sensor are working properly,  the follow
 Please note that this routine is the only one that is executed on a normal (Linux)
 **PC, instead of the Raspberry Pi**, in order to abstract from any Raspi specific problems.
 
-1. Ensure that python3 is installed on your PC by running `python3 --version` in the terminal. In case there is no item found, install version 3.6 by `sudo apt-get install python3.6`.
-2. Install the pslab-python library on the PC by executing `sudo apt-get install pslab`.
+1. Ensure that python3 is installed on your PC by running `python3 --version` in the terminal. In case there is no item found, install version 3.6 by `sudo apt-get install python3.6` and reboot your system afterwards to ensure that everything is fully loaded.
+2. Install the pslab-python library on the PC by executing `pip3 install pslab`.
 3. Detach the PSLab and the corresponding sensor from the Raspberry Pi by removing the
 microUSB to microUSB cable between Raspi and PSLab. Instead connect the microUSB port of the PSLab to one of the PC's USB ports.
 4. Download the pslab-scripts library by running `sudo git clone https://github.com/fossasia/pslab-scripts.git`.

@@ -25,7 +25,7 @@ After the PSLab sensor box is connected to electricity, the WiFi Hotspot is auto
 ## On Linux
 
 1. Open a terminal.
-2. Execute "sudo apt-get install samba".
+2. Execute `pip3 install samba`.
 3. Open the file explorer.
 4. The new device “PSLab” should automatically appear in the network section (else, refresh the page). Connect to this device.
 
