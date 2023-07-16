@@ -3,7 +3,10 @@ import serial
 from sensors.driver_ccs811 import CCS811
 
 class CO2_Sensor:
-    """ Using the CCS811 with its custom driver to retrieve the CO2e value of the air. """
+    """
+    Using the CCS811 with its custom driver to retrieve the CO2e value of the air.
+    As this is an I2C sensor, the cabling is fixed to the corresponding I2C pins of the PSLab.
+    """
     dev = CCS811()
 
     def __init__(self):
@@ -24,5 +27,5 @@ class CO2_Sensor:
         CO2e = ret['eCO2']
         return CO2e
     
-def measure_co2(object):
-    return object.measure_co2()
+def measure_co2(sensor):
+    return sensor.measure_co2()

@@ -57,7 +57,7 @@ from pythonosc import osc_server
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", default="192.168.184.20")
+    parser.add_argument("--ip", default="192.168.173.152")
     parser.add_argument("--port", type=int, default=5005)
     args = parser.parse_args()
 
@@ -73,7 +73,7 @@ if __name__ == "__main__":
 ```
 
 This server uses the [python-osc](https://github.com/attwad/python-osc) package to receive and decode the messages. The package can be installed by executing `pip3 install python-osc` in the PC's terminal.
-Please note that this setup only works if the IP address in the device's [osc_sharing.py](./osc_sharing.py), is identical to the IP address stated in the server scrips (in line 7 here) and corresponds to the laptops own IP address (obtainable by executing "ifconfig" in the terminal). This OSC server for example produces the following output when at the same time the Oxygen Sensor Box and the Light Sensor Box are sending OSC data to this IP address at port 5005:
+Please note that this setup only works if the IP address in the device's [osc_sharing.py](./osc_sharing.py), is identical to the IP address stated in the server scrips (in line 7 here) and corresponds to the laptops own IP address (obtainable by executing "ifconfig" in the terminal). This OSC server for example produces the following output when, at the same time, the Oxygen Sensor Box and the Light Sensor Box are sending OSC data to this IP address at port 5005:
 
 ```
 /oxygen 19.65267857142857 %
