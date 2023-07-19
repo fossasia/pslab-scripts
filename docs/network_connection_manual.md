@@ -1,15 +1,16 @@
-# Connecting a User Device (PC or Phone) to the File Server 
+# Connecting a User Device (PC or Phone) to the File Server
 
-After the PSLab sensor box is connected to electricity, the WiFi Hotspot is automatically initialized. Once the users PC/ Phone is now connected to this WiFi Hotspot, a data transfer network connection can be initialized to access the file server.
+Once the PSLab sensor box is connected to a known WiFi Hotspot nearby, its file server is shared over this network and
+can be accessed as follows.
 
 ## General Disclaimers
 
-1. You probably need to wait a minute or two after starting the PSLab sensor box, until the WiFi Hotspot is successfully initialized.
-2. It is essential to **stay connected** to the WiFi Hotspot in order to access the data, even though your device might complain about "no internet access". This connection may need to be ensured by re-connecting manually.
-3. The file server is supposed to be accessed **anonymously**, as a **"guest user"**, without username or password.
-4. The connection name can be chosen arbitrarily. Just make sure, that different names are assigned to the different PSLabs, in order for them not to be mixed up.
+1. You probably need to wait a minute or two after starting the PSLab sensor box, until the WiFi connection is successfully initialized.
+2. The file server is supposed to be accessed **anonymously**, as a **"guest user"**, without username or password.
+3. The connection name can be chosen arbitrarily. Just make sure, that different names are assigned to the different PSLabs, in order for them not to be mixed up.
 
 ## On Windows
+
 1. Open the file explorer.
 2. Right click on "This PC" and select "Add Network Address".
 3. Choose to add a user defined network address and enter "\\\\10.42.0.1\data" as this address.

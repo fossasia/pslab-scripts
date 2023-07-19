@@ -1,6 +1,6 @@
 # PSLab
 
-This repo is used for scripts and operators to run and collect data of specific sensors connected with the PSLab.
+This repo is used for scripts and operators that collect data of specific sensors connected with the PSLab.
 
 [![Gitter](https://badges.gitter.im/fossasia/pslab.svg)](https://gitter.im/fossasia/pslab-sister?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Twitter Follow](https://img.shields.io/twitter/follow/pslabio.svg?style=social&label=Follow&maxAge=2592000?style=flat-square)](https://twitter.com/pslabio)
@@ -15,24 +15,35 @@ PSLab is a tiny pocket science lab that provides an array of equipment for doing
 
 In this project four different experimental setups of the [PSLab v5](https://pslab.io/wp-content/uploads/PSLab-Data-Sheet.pdf) are created, each incorporating a different sensor. Details for those sensor setups can be found [here](/docs/sensors.md). In addition, the following **hardware components** are connected to the PSLabs:
 
-- A **Raspberry Pi Zero W** to store the sensor data permanently on an SD card and at the same time make this data available via the Raspberry Pi's WiFi module. The "Zero" is especially handy here, as it is the most lightweight Raspberry Pi version.
+- A **Raspberry Pi Zero W** to store the sensor data permanently on an SD card and, at the same time, make this data available via the Raspberry Pi's WiFi module. The "Zero" is especially handy here, as it is the most lightweight Raspberry Pi version. Both, the Raspi and the PSLab are screwed on to a plexiglass panel that is slid into the box using the boxe's integrated rail system.
 - A **Button** to safely shutdown the Raspberry Pi. It needs to be long pressed for at least one second in order to trigger the device's shutdown. Here, one button terminal is plugged into GPIO pin 27, while the other terminal is plugged to the ground.
-- The high accuracy I²C **real time clock (RTC)** model [DS3231](https://www.analog.com/media/en/technical-documentation/data-sheets/DS3231.pdf). It contains a small battery and ensures that the device's time progresses, even if the main power source is unavailable. This RTC therefore makes timestamps in the output data possible, even during times where the PSLab sensor box can not access the internet. The five pins of this Pi HAT are plugged into pins 1 (3.3V power), 3 (SDA I²C), 5 (SCL I²C), 7 and 9 (ground) of the Raspberry Pi Zero W.
+- The high accuracy I²C **real time clock (RTC)** model [DS3231](https://www.analog.com/media/en/technical-documentation/data-sheets/DS3231.pdf). It contains a small battery and ensures that the device's time progresses, even if the main power source is unavailable. This RTC therefore makes timestamps in the output data possible during times, where the PSLab sensor box can not access the internet. The five pins of this Pi HAT are plugged into pins 1 (3.3V power), 3 (SDA I²C), 5 (SCL I²C), 7 (GPCL) and 9 (ground) of the Raspberry Pi Zero W.
 
 The following **features** are implemented on top of that:
-- If not connected to a known WiFi network, each PSLab sensor box automatically opens its own WiFi Hotspot, once the system is connected to an energy source and finished its booting process (which may take one or two minutes).
+
 - The measurement it triggered automatically after startup. This is done by a custom [systemd](https://www.raspberrypi-spy.co.uk/2015/10/how-to-autorun-a-python-script-on-boot-using-systemd/) service.
-- Each measured data point is then either shared via the [OSC protocol](https://en.m.wikipedia.org/wiki/Open_Sound_Control), or written into the CSV file of this measurement session. The file is structured as `<timestamp>, <measured_value>, <unit>, <item_name>`.
-- A [samba file sharing server](https://raspberrypi-guide.github.io/filesharing/filesharing-raspberry-pi) makes the folder "/home/foss/data" of the Raspberry Pi publicly available to all devices within its WiFi Hotspot. This also enables users to modify or delete the CSV measurement data within this folder remotely via their PC or mobile phone. The measurements are provided to this file sharing server in real-time, however they are also stored there permanently via the SD card. The user can thus combine the benefits of both measurement forms.
-- The Raspberry Pi itself is currently running the code from the master branch this Github repository. This makes code updates easy to distribute on all devices. All PSLab sensor boxes run the exact identical code, with the only difference being the experiment type parameter with which `init_pipe.py` is called in the systemd service.
+- Each measured data point is then immediately shared via OSC as `/<item_name> <measured_value>, <unit>, <timestamp>`. Additionally it is written into the CSV file of this measurement session. The file is structured as `<timestamp>, <measured_value>, <unit>, <item_name>`.
+- The devices are connected to a common public WiFI Hotspot, where they share their data as part of a IoT approach. A [samba file sharing server](https://raspberrypi-guide.github.io/filesharing/filesharing-raspberry-pi) makes the folder "/home/foss/data" of the Raspberry Pi publicly available to all devices within the WiFi Hotspot. This also enables users to modify or delete the CSV measurement data within this folder remotely via their PC or mobile phone. The measurements are not only provided to this file sharing server in real-time, but also stored on the SD card permanently.
+- The Raspberry Pi itself is currently running the code from the master branch this Github repository. This makes code updates easy to distribute on all devices. All PSLab sensor boxes run the exact identical code, with the only difference being the experiment type parameter with which `init_pipe.py` is called by the systemd service.
 
-## Basic Usage
+## Initial Setup
 
-Once a power source (power bank or cord to electricity outlet) is connected to the PSLab sensor box and the device has fully booted, a new measurement is automatically started. The measurement results are now either shared via OSC, or collected in a CSV. In either case, it is essential to have your own PC/phone connected to the same WiFi Hotspot, that the PSLab Sensor Box is connected to. This can either be a public WiFi (once that is manually set up) or the Raspi's own WiFi Hotspot with the corresponding name (like "PSLab.Light.01"). To eventually trigger the shut down process of the PSLab sensor box, please press the attached button for one to two seconds.
+Both, the OSC messages and the CSV file, of the measurement can be retrieved via WiFi. Currently, the devices are connected to a dummy WiFi hHtspot with the credentials
+"myHotspot" as the SSID and "password123" as the password. So for basic testing, one can just open a Hotspot with these details on a Phone/PC to obtain the measurement data.
+However, for more extensive usage, it is obviously more convenient to connect the PSLab Sensor Boxes to the buildings usual WiFi.
+This can be done by [connecting the Raspberry Pi to a monitor](#using-the-raspberry-pi-as-an-independent-computer) and logging into the new WiFi Hotspot using the graphical user interface. Once connected, it is also possible to [set a static private IP address](https://www.tomshardware.com/how-to/static-ip-raspberry-pi) for the Raspberry Pi in this network, in order to make the Raspi reliably accessible via SSH.
+
+Additionally, the IP address and port, that are used for the OSC data transfer, should be edited according to the actual address of the OSC receiver.
+This can be done by adjusting the constants in [export_data.py](/export_data.py).
+
+## <span style="color:red">Basic Usage</span>
+
+Once a power source (power bank or cord to electricity outlet) is connected to the PSLab sensor box and the device has fully booted, a new measurement is automatically started. The measurement results are now simultaneously shared via the [Open Sound Control Protocol (OSC)](https://en.wikipedia.org/wiki/Open_Sound_Control) and collected in a [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) file.
+To retrieve this data, please connect your own PC/Phone to the same public WiFi Hotspot, that the PSLab Sensor Box is connected to (see [initial setup](#initial-setup)).
 
 ### Accessing the CSV Measurements
 
-The CSV measurements can be exported in real time from the file server via WiFi:
+The CSV measurements of each PSLab sensor box can be retrieved in real time from the file server via WiFi:
 
 1. A detailed manual on how to connect to the devices file server for the first time can be found [here](/docs/network_connection_manual.md).
 2. Once connected, the PSLab will appear in the "Network Devices" section.
@@ -44,7 +55,7 @@ Access the "data" folder and fetch some CSV measurement data file. This file can
     <img src="./docs/images/sample_csv.png" alt="Sample CSV" width="50%">
 </p>
 
-Analysis tasks can now be performed on this data, for example importing it into [Jupyter Notebook](https://jupyter.org/).
+Analysis tasks can now be performed on these data sheets, for example by importing them into [Jupyter Notebook](https://jupyter.org/).
 
 ### Receiving the OSC Messages
 
@@ -86,6 +97,13 @@ Please note that this setup only works if the IP address in the device's [osc_sh
 /light 85.59564368053684 lux
 ```
 
+### Ending the Session
+
+To eventually trigger the shut down process of the Raspberry Pi, please press the attached button for one to two seconds.
+After waiting 20-30 seconds, the shut down is completed and the electricity source can be unplugged.
+Technically, the measurement session can also be terminated by just unplugging the power source directly, however in the long term,
+this technique can be harmful for the Raspberry Pi's file system.
+
 ## Advanced Usage
 
 First of all, as part of the open hardware approach, we obviously want you to be able to check out the electronics inside the device. As as a disclaimer: do **not** open the box with brute force. There is a trick in opening it by angling out the lid from the lower side. This works even better when using a screw driver.
@@ -105,7 +123,6 @@ In any case, the SD card should never be cleared fully, because this would delet
 #### Using the Raspberry Pi as an Independent Computer
 
 Here, a monitor needs to be connected to the microHDMI slot of the Raspi. Simultaneously a mouse and a keyboard need to be linked to the inner microUSB slot via an USB hub. Make sure to perform this cabling-up before attaching the device to the electricity source.
-As this option provides a graphical user interface for editing and debugging, it is usually preferable for beginners.
 
 #### Accessing the Raspberry Pi via SSH
 
@@ -181,27 +198,29 @@ on the Raspberry Pi (for example `sudo python3 init_pipe.py oxygen`) and checkin
 
 ```
 📦pslab-scripts
- ┣ 📂docs                                   # Supplementary material
- ┃ ┣ 📂ao-03_amplifier_circuit_design       # KiCad project files of the custom circuit board for the AO-03 sensor
+ ┣ 📂docs                               # Supplementary material
+ ┃ ┣ 📂3d_model_box                    # CAD files for a 3D printable box with side opening, rail system and custom cable holes
+ ┃ ┃ ┗ 📜 ...
+ ┃ ┣ 📂ao-03_amplifier_circuit_design  # KiCad project files of the custom circuit board for the AO-03 sensor
  ┃ ┃ ┗ 📜 ...
  ┃ ┣ 📂images
- ┃ ┃ ┣ 📜sensor_logos.svg                   # Sticker designs for the boxes (made with Inkscape)
  ┃ ┃ ┗ 📜 ...
- ┃ ┣ 📜network_connection_manual.md         # Manual on how to connect a device to the PSLab's file server
+ ┃ ┣ 📂logos                           # Sticker designs for the boxes (made with Inkscape)
+ ┃ ┃ ┗ 📜 ...
+ ┃ ┣ 📜network_connection_manual.md    # Manual on how to connect a device to the PSLab's file server
  ┃ ┣ 📜presentation_may28.pdf
- ┃ ┣ 📜sensors.md                           # Detailed descriptions of all four sensor setups
- ┃ ┗ 📜testing_manual.md                    # Detailed manual on how to test the devices
- ┣ 📂sensors                                # Contains a specific run script for every sensor
+ ┃ ┣ 📜sensors.md                      # Detailed descriptions of all four sensor setups
+ ┃ ┗ 📜testing_manual.md               # Detailed manual on how to test the devices
+ ┣ 📂sensors                            # Contains a specific run script for every sensor
  ┃ ┣ 📜ao03_oxygen.py
  ┃ ┣ 📜ccs811_co2.py
- ┃ ┣ 📜driver_ccs811.py                     # Custom driver for the CCS811 sensor
+ ┃ ┣ 📜driver_ccs811.py                # Custom driver for the CCS811 sensor
  ┃ ┣ 📜gl5528_light.py
  ┃ ┗ 📜lm35_temp.py
- ┣ 📜init_pipe.py                           # Main project file
+ ┣ 📜export_data.py                     # Sharing the measurements via OSC and CSV
+ ┣ 📜init_pipe.py                       # Main project file
  ┣ 📜measure.py
- ┣ 📜osc_sharing.py
- ┣ 📜store_data.py
- ┗ 📜shutdown.py                            # Script for the button logic
+ ┗ 📜shutdown.py                        # Script for the button logic
 ```
 
 ## Buy

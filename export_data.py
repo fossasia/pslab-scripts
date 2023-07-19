@@ -1,16 +1,14 @@
 import os
 import time
 import argparse
-from getmac import get_mac_address as gma
 from pythonosc import udp_client
 
-MAC_ADDRESS = gma()
-
+# osc constants
 OSC_RECEIVER_IP = "192.168.173.152"
 OSC_RECEIVER_PORT = 5005
 
+# csv constants
 DATESTAMP_FORMAT = "%d-%m-%Y"
-TIMESTAMP_FORMAT = "%d-%m-%Y %H:%M:%S"
 FILEPATH = "/home/foss/data/"
 FLUSHING_THRESHOLD = 10
 
@@ -33,10 +31,9 @@ def write_to_csv(file, data, line_counter):
 	so the user can follow the real time data on his device.
 	This also has the advantage, that a maximum of |flushing_threshold-1| lines
 	of measurement are lost, in the event of a sudden power outage.
-	Each line has the format: <timestamp>, <measured_value>, <unit>, <item_name>, <mac_address>.
+	Each line has the format: <timestamp>, <measured_value>, <unit>, <item_name>.
 	"""
-	file.write("{0},{1}\n".format(
-    	time.strftime(TIMESTAMP_FORMAT),",".join(str(d) for d in data)))
+	file.write("{0}\n".format(",".join(str(d) for d in data)))
 	line_counter = line_counter + 1
 	if line_counter >= FLUSHING_THRESHOLD: # flushing (aka updating) the csv now
 		file.flush()
@@ -60,10 +57,10 @@ def init_osc_connection():
 def share_via_osc(osc_client, data):
     """
     Sending the current measurement via the OSC protocol to the specified receiver.
-    Each OSC message has the format: /<item_name> <measured_value>, <unit>, <timestamp>, <mac_address>.
+    Each OSC message has the format: /<item_name> <measured_value>, <unit>, <timestamp>.
     """
-    osc_client.send_message("/{0}".format(data[2]),
-            "{0} {1} {2} {3}".format(str(data[0]), data[1], data[3], time.strftime(TIMESTAMP_FORMAT)))
+    osc_client.send_message("/{0}".format(data[3]),
+            "{0} {1} {2}".format(str(data[1]), data[2], data[0]))
 
 def export(connection):
 	"""
@@ -75,7 +72,6 @@ def export(connection):
 		line_counter = 0
 		while True:
 			data = connection.recv()
-			data.append(MAC_ADDRESS)
 			if data is None: # no more measurements incoming
 				break
 			line_counter = write_to_csv(file, data, line_counter)

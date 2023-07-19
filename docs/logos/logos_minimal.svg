@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="38.264584mm"
+   height="29.264584mm"
+   viewBox="0 0 38.264583 29.264584"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="PSLab.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="4.359103"
+     inkscape:cx="76.506566"
+     inkscape:cy="71.574358"
+     inkscape:window-width="1920"
+     inkscape:window-height="1015"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1-6" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-31.773135,-121.38804)">
+    <rect
+       id="rect59"
+       width="29.984291"
+       height="19.431267"
+       x="31.878435"
+       y="121.54455"
+       style="fill:#d40000;fill-opacity:1;stroke-width:0.0961873" />
+    <rect
+       id="rect59-7"
+       width="7.9352274"
+       height="9.5645037"
+       x="61.862724"
+       y="140.97581"
+       style="fill:#d40000;fill-opacity:1;stroke-width:0.0347161" />
+    <g
+       inkscape:label="Layer 1"
+       id="layer1-6"
+       transform="matrix(0.42827491,0,0,0.44131327,1.2676868,66.75972)">
+      <g
+         id="g78"
+         transform="matrix(0.87328494,0,0,0.87328494,57.552875,92.912247)">
+        <g
+           id="g121"
+           transform="translate(-0.22432951)" />
+        <g
+           id="g121-5"
+           transform="translate(1.7014016,35.196021)">
+          <g
+             id="g204-3"
+             transform="translate(15.20741,0.11042034)">
+            <text
+               transform="scale(0.94768405,1.055204)"
+               id="text71-6"
+               y="64.309853"
+               x="5.2786884"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.0088px;line-height:1.25;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono';letter-spacing:0px;word-spacing:0px;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:0.231514"
+               xml:space="preserve"><tspan
+                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.0088px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#d40000;fill-opacity:1;stroke:none;stroke-width:0.231514;stroke-opacity:1"
+                 y="64.309853"
+                 x="5.2786884"
+                 id="tspan69-2"
+                 sodipodi:role="line">Sensor Box</tspan></text>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g78-4"
+         transform="matrix(0.87328494,0,0,0.87328494,66.944386,113.31775)">
+        <g
+           id="g121-1"
+           transform="translate(-0.22432951)" />
+        <g
+           id="g121-5-9"
+           transform="translate(1.7014016,35.196021)">
+          <g
+             id="g204-3-0"
+             transform="translate(15.20741,0.11042034)" />
+        </g>
+      </g>
+    </g>
+    <rect
+       style="opacity:1;fill:#fefefe;fill-opacity:0;stroke:#000000;stroke-width:0.264583;stroke-opacity:1"
+       id="rect3396"
+       width="38"
+       height="29"
+       x="31.905426"
+       y="121.52033" />
+    <ellipse
+       cy="132.642"
+       cx="59.551331"
+       id="path67-5"
+       style="fill:#ffffff;stroke-width:0.187624"
+       rx="1.5182555"
+       ry="1.5644771" />
+    <text
+       transform="scale(0.93357971,1.0711458)"
+       id="text71-6-9"
+       y="125.51279"
+       x="35.163666"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.4285px;line-height:1.25;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0954538"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.4285px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0954538;stroke-opacity:1"
+         y="125.51279"
+         x="35.163666"
+         id="tspan69-2-8"
+         sodipodi:role="line">PSLab</tspan></text>
+    <text
+       transform="scale(0.93357972,1.0711458)"
+       id="text71-6-9-5"
+       y="125.38255"
+       x="66.725227"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.4285px;line-height:1.25;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono';letter-spacing:0px;word-spacing:0px;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:0.0954538"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.4285px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#d40000;fill-opacity:1;stroke:none;stroke-width:0.0954538;stroke-opacity:1"
+         y="125.38255"
+         x="66.725227"
+         id="tspan69-2-8-6"
+         sodipodi:role="line">io</tspan></text>
+  </g>
+</svg>

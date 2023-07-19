@@ -8,6 +8,7 @@ from sensors.gl5528_light import measure_light_intensity
 from sensors.lm35_temp import measure_temperature
 
 MEASURING_INTERVAL = 1 # in seconds
+TIMESTAMP_FORMAT = "%d-%m-%Y %H:%M:%S"
 
 experiment_options = { # item_name : [function_name, unit]
     "co2"       : [measure_co2, "ppm"],
@@ -37,7 +38,10 @@ def connect_to_pslab(experiment_type):
     return device
 
 def get_data_pslab(connection, experiment_type):
-    """ Periodically fetches measurements from the sensor and forwards them via the pipeline. """
+    """
+    Periodically fetches measurements from the sensor and forwards them via the pipeline
+    in the format of: <timestamp>, <measured_value>, <unit>, <item_name>.
+    """
     while True:
         device = connect_to_pslab(experiment_type)
         if device is None:
@@ -45,7 +49,7 @@ def get_data_pslab(connection, experiment_type):
         while True:
             measurement = experiment_options[experiment_type][0](device)
             if measurement != 0:
-                connection.send([measurement,
+                connection.send([time.strftime(TIMESTAMP_FORMAT), measurement,
                     experiment_options[experiment_type][1], experiment_type])
                 time.sleep(MEASURING_INTERVAL)
             else:

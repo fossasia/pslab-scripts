@@ -13,7 +13,7 @@ For each of them the following steps can be executed to test their functionality
 
 After opening the paper box, the plastic boxes need to be opened, in order to access the
 USB charging connector, the sensor and the power off button. In the final version, those
-three items will be exposed outside the box, however right now they are still hidden inside. Opening the plastic box can seem a bit tricky at first, but by angling out the lid from the lower edge (see the description [here](../README.md#advanced-usage)) it becomes fairly easy.
+three items will be exposed outside the box, however right now they are still hidden inside. Opening the plastic box can seem a bit tricky at first, but by angling out the lid from the lower edge (see the description in [advanced usage](../README.md#advanced-usage)) it becomes fairly easy.
 
 <p align="center">
     <img src="./images/exposed_connections.jpeg" alt="Exposed Connections" width="50%">
@@ -56,16 +56,6 @@ after a few seconds to check & compare the last time stamp.
 WiFi, in order to make multiple devices accessible at once within one network. Therefore, the devices first need to be connected to a common WiFi access point. This connection is automatically done, once the Raspberry Pi remembers the WiFi, however the first setup needs to be executed manually by connecting the Raspberry Pi to a monitor (as explained [here](../README.md#using-the-raspberry-pi-as-an-independent-computer)) and adding the new network.
 - Alternatively, a dummy connection with the credentials "myHotspot" as the SSID and "password123" as the password is already set up. Therefore the device can be tested by just opening a Hotspot from your phone/PC with those credentials. The PSLab Sensor Box will then automatically connect with this network, no monitor connection needed. In case of connection errors, try restarting the Raspberry Pi.
 - The PSLab Sensor Box now sends OSC data within this WiFi network. Currently, the receiver of this OSC data is at IP address 192.168.173.152, however this can be edited in the osc_sharing.py file (by connecting the PSLab Sensor Box to a monitor or accessing it via SSH, as described [here](../README.md#accessing-the-data-on-the-raspberry-pi)). A simple server to receive the OSC messages on a PC using python is explained [here](../README.md#receiving-the-osc-messages).
-
-## Ending the Measurement
-
-To finish the measurement session, the device needs to be shut down. This can
-simply be done by just unplugging the power source, however in the long term,
-this technique can be harmful for the Raspberry Pi's file system. We therefore decided to
-attach a button to the PSLab Sensor Box. Please press this button for one to two seconds
-to trigger the shutdown process of the Raspberry Pi. As that process needs 20-30 seconds,
-it is important to wait a bit (until the Raspi's lights went off)
-before finally unplugging the electricity source.
 
 ## Up Next
 
