@@ -10,5 +10,5 @@ def measure_oxygen(psl,channel="CH1"):
         v_out = psl.multimeter.measure_voltage(channel)
     except serial.SerialException:
         return 0 # measurement is still continued, even if an exception occurred (usually just a temporary error)
-    oxygen = v_out * 58
+    oxygen = v_out * 64
     return oxygen
