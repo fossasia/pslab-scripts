@@ -47,9 +47,9 @@ class CCS811(I2CSlave):
     def __init__(self, address=None, device=None):
         super().__init__(address or self._ADDRESS, device)
         self.fetchID()
-        self.softwareReset()
+        self.software_reset()
 
-    def softwareReset(self):
+    def software_reset(self):
         self.write([0x11, 0xe5, 0x72, 0x8a], self._SW_RESET)
 
     def fetchID(self):
@@ -104,6 +104,7 @@ class CCS811(I2CSlave):
         return s
 
     def decode_error(self, error_id):
+        s = ''
         if (error_id & (1 << 0)) > 0:
             s += ', The CCS811 received an I²C write request addressed to this station but with invalid register address ID'
         if (error_id & (1 << 1)) > 0:
@@ -136,5 +137,5 @@ class CCS811(I2CSlave):
         }
 
         if error_id > 0:
-            raise RuntimeError(self.decodeError(error_id))
+            raise RuntimeError(self.decode_error(error_id))
         return result

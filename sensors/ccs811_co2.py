@@ -11,9 +11,9 @@ class CO2_Sensor:
 
     def __init__(self):
         time.sleep(0.05)
-        self.dev.appStart()
+        self.dev.app_start()
         time.sleep(1)
-        self.dev.setMeasureMode(CCS811.MODE_CONTINUOUS)
+        self.dev.set_measure_mode(CCS811.MODE_CONTINUOUS)
         # skip the first 4 results, which are all zeros
         for _ in range(4):
             time.sleep(1)
