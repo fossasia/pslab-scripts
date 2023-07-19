@@ -9,11 +9,13 @@ PSLab is a tiny pocket science lab that provides an array of equipment for doing
 
 ## The PSLab Sensor Box
 
+For a quick start jump to the [basic usage](#basic-usage) section.
+
 <p align="center">
     <img src="/docs/images/phone_connections.jpg" alt="PSLab Sensor Box" width="75%">
 </p>
 
-In this project four different experimental setups of the [PSLab v5](https://pslab.io/wp-content/uploads/PSLab-Data-Sheet.pdf) are created, each incorporating a different sensor. Details for those sensor setups can be found [here](/docs/sensors.md). In addition, the following **hardware components** are connected to the PSLabs:
+In this project four different experimental setups of the [PSLab v5](https://pslab.io/wp-content/uploads/PSLab-Data-Sheet.pdf) are created, each incorporating a different sensor. Details for those sensor setups can be found in the [docs](/docs/sensors.md). In addition, the following **hardware components** are connected to the PSLabs:
 
 - A **Raspberry Pi Zero W** to store the sensor data permanently on an SD card and, at the same time, make this data available via the Raspberry Pi's WiFi module. The "Zero" is especially handy here, as it is the most lightweight Raspberry Pi version. Both, the Raspi and the PSLab are screwed on to a plexiglass panel that is slid into the box using the boxe's integrated rail system.
 - A **Button** to safely shutdown the Raspberry Pi. It needs to be long pressed for at least one second in order to trigger the device's shutdown. Here, one button terminal is plugged into GPIO pin 27, while the other terminal is plugged to the ground.
@@ -36,7 +38,7 @@ This can be done by [connecting the Raspberry Pi to a monitor](#using-the-raspbe
 Additionally, the IP address and port, that are used for the OSC data transfer, should be edited according to the actual address of the OSC receiver.
 This can be done by adjusting the constants in [export_data.py](/export_data.py).
 
-## <span style="color:red">Basic Usage</span>
+## Basic Usage
 
 Once a power source (power bank or cord to electricity outlet) is connected to the PSLab sensor box and the device has fully booted, a new measurement is automatically started. The measurement results are now simultaneously shared via the [Open Sound Control Protocol (OSC)](https://en.wikipedia.org/wiki/Open_Sound_Control) and collected in a [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) file.
 To retrieve this data, please connect your own PC/Phone to the same public WiFi Hotspot, that the PSLab Sensor Box is connected to (see [initial setup](#initial-setup)).
@@ -45,7 +47,7 @@ To retrieve this data, please connect your own PC/Phone to the same public WiFi 
 
 The CSV measurements of each PSLab sensor box can be retrieved in real time from the file server via WiFi:
 
-1. A detailed manual on how to connect to the devices file server for the first time can be found [here](/docs/network_connection_manual.md).
+1. A detailed manual on how to connect to the devices file server for the first time can be found in the [docs](/docs/network_connection_manual.md).
 2. Once connected, the PSLab will appear in the "Network Devices" section.
 <p align="center">
     <img src="./docs/images/access_network_folder.png" alt="Access network device" width="70%">
@@ -161,7 +163,7 @@ By adjusting the experiment type parameter in the systemd service "startup.servi
 
 1. Open a terminal.
 2. Type `sudo nano /lib/systemd/system/startup.service`.
-3. The "startup.service" file is now opened in a simple text editor. Here, you can adjust the experiment type parameter, e.g. from "light" to "co2", in case the PSLab sensor box for light shall now be used with a CO2 sensor. The full list of currently supported parameters can be found [here](/measure.py).
+3. The "startup.service" file is now opened in a simple text editor. Here, you can adjust the experiment type parameter, e.g. from "light" to "co2", in case the PSLab sensor box for light shall now be used with a CO2 sensor. The full list of currently supported parameters can be found in [measure.py](/measure.py).
 4. Save the changes by pressing Ctrl+o. Exit the editor by pressing Ctrl+x.
 5. The changes take effect once the device is rebooted. This can for example be done by `sudo reboot`.
 
