@@ -133,9 +133,8 @@ However, to establish this connection, the Raspberry Pi needs to be in the same 
 
 As the Raspi is currently connected to its very own WiFi Hotspot, an access via SSH is easily possible:
 
-1. Ensure that the PC is connected to the WiFi Hotspot of the PSLab Sensor Box.
-2. Open the SSH connection by running `ssh foss@10.42.0.1` in the terminal and
-entering the password "foss" when asked.
+1. Ensure that the PC is connected to the same WiFi Hotspot as the PSLab Sensor Box.
+2. Open the SSH connection by running `ssh foss@<ip>` in the terminal and entering the password "foss" when asked.
 3. Now you are operating on the Raspberry Pi.
 
 ### Adjusting the measurement interval
