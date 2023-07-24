@@ -90,7 +90,7 @@ The CSV measurements of each PSLab sensor box can be retrieved in real time from
 Access the data folder and fetch the most recent CSV measurement data file. This file can for example be opened by Excel or just a normal text editor. The current measurement file is updated automatically every few seconds, to see these real time changes, just close and reopen the file.
 
 <p align="center">
-    <img src="./docs/images/csv_data.png" alt="Sample CSV" width="40%">
+    <img src="./docs/images/csv_data.png" alt="Sample CSV" width="60%">
 </p>
 
 Analysis tasks can now be performed on these data sheets, for example by importing them into [Jupyter Notebook](https://jupyter.org/).
@@ -125,7 +125,7 @@ This server uses the [python-osc](https://github.com/attwad/python-osc) package 
 Please note that this setup only works if the IP address, specified as `OSC_RECEIVER_IP`, is identical to the IP address stated in the server scrips (in line 7 here) and corresponds to the laptops own IP address (obtainable by executing "ifconfig" in the terminal). This OSC server for example produces the following output when, at the same time, the Oxygen Sensor Box and the Light Sensor Box are sending OSC data to this IP address at port 5005:
 
 <p align="center">
-    <img src="./docs/images/osc_data.png" alt="Sample OSC" width="50%">
+    <img src="./docs/images/osc_data.png" alt="Sample OSC" width="70%">
 </p>
 
 ### Example Measurement Session
