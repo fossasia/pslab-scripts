@@ -8,7 +8,7 @@ This digital sensor is embedded on the [CJMCU-8118](https://www.amazon.co.jp/-/e
 
 The CCS811 measures the [CO<sub>2</sub>e](https://klima.com/blog/what-is-co2e/) ("CO<sub>2</sub> equivalent") value of the surrounding air in particles per million (ppm). This value also incorporates the levels of methane (CH<sub>4</sub>), nitrous dioxide (N<sub>2</sub>O) and other synthetic gases, besides the regular CO<sub>2</sub> measurement, which makes up about 75% of the CO<sub>2</sub>e. This value is therefore used by environmental scientists nowadays to give more accurate measurements about the current levels of emissions in the air.
 
-As emissions vary depending on the air's temperature and humidity, the CCS811 sensor has inbuilt temperature and moisture sensors. It uses those to offset the variation of the measuring conditions to the optimal lab conditions. However, it is important to notice that the sensor has a lower limit of 400ppm CO<sub>2</sub>e that can be detected.
+As emissions vary depending on the air's temperature and humidity, the CCS811 sensor has inbuilt temperature and moisture sensors. It uses those to offset the variation of the measuring conditions to the optimal lab conditions. Please give the sensor a minute after startup to fully calibrate. However, it is important to notice that the sensor has a lower limit of 400ppm CO<sub>2</sub>e that can be detected.
 
 <p align="center">
     <img src="./images/co2_sensor_connection.png" alt="Connecting the co2 sensor" width="90%">
@@ -17,7 +17,7 @@ The CJMCU-8118 is connected to the PSLab's VDD (3.3V power supply), GND (ground)
 
 ## 🟦 Oxygen Sensor: [AO-03](http://www.aosong.com/userfiles/files/media/Datasheet%20AO-03.pdf)
 
-The analog AO-03 sensor measures the O<sub>2</sub> content of the surrounding air in percent (%). It is embedded in a custom circuit board that is amplifying the measured voltage, because the changes in oxygen levels are usually just very slight and therefore the changes in voltage are also only minimal. This AO-03 circuit board is designed as described [below](./ao-03_amplifier_circuit_design/) and depicted in the following:
+The analog AO-03 sensor measures the O<sub>2</sub> content of the surrounding air in percent (%). It is embedded in a custom circuit board that is amplifying the measured voltage, because the changes in oxygen levels are usually just very slight and therefore the changes in voltage are also only minimal. Please give the sensor a minute after startup to fully calibrate. This AO-03 circuit board is designed as described [below](./ao-03_amplifier_circuit_design/) and depicted in the following:
 <p align="center">
     <img src="./images/ao-03_amplifier_circuit_schematic.png" alt="Schematic of the amplifier board" width="65%">
 </p>

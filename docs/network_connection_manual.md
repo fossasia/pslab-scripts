@@ -8,7 +8,7 @@ can be accessed as follows.
 1. You probably need to wait a minute or two after starting the PSLab sensor box, until the WiFi connection is successfully initialized.
 2. The file server is supposed to be accessed **anonymously**, as a **"guest user"**, without username or password.
 3. The connection name can be chosen arbitrarily. Just make sure, that different names are assigned to the different PSLabs, in order for them not to be mixed up.
-4. The Raspberry Pi's IP address can be obtained by [following the tutorial](/README.md#retrieving-the-sensor-boxes-ip-addresses) in the [initial setup section](/README.md#initial-setup).
+4. The Raspberry Pi's IP address can be obtained by following the tutorial in the README section about [accessing the Raspberry Pi](/README.md#accessing-the-raspberry-pi).
 
 ## On Windows
 
