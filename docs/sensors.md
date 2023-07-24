@@ -4,7 +4,7 @@ Currently the following sensors are supported by specific firmware here, however
 
 ## ⬛ CO<sub>2</sub>e Sensor: [CCS811](https://cdn.sparkfun.com/assets/learn_tutorials/1/4/3/CCS811_Datasheet-DS000459.pdf)
 
-This digital sensor is embedded on the [CJMCU-8118](https://www.amazon.co.jp/-/en/CJMCU-8118-HDC1080-Monoxide-Temperature-Humidity/dp/B07KWPHYLY) circuit board and powered by a custom [driver](../sensors/driver_ccs811.py) that uses the sensors I²C protocol.
+This digital sensor is embedded on the [CJMCU-8118](https://www.amazon.co.jp/-/en/CJMCU-8118-HDC1080-Monoxide-Temperature-Humidity/dp/B07KWPHYLY) circuit board and powered by a custom driver that uses the sensors I²C protocol.
 
 The CCS811 measures the [CO<sub>2</sub>e](https://klima.com/blog/what-is-co2e/) ("CO<sub>2</sub> equivalent") value of the surrounding air in particles per million (ppm). This value also incorporates the levels of methane (CH<sub>4</sub>), nitrous dioxide (N<sub>2</sub>O) and other synthetic gases, besides the regular CO<sub>2</sub> measurement, which makes up about 75% of the CO<sub>2</sub>e. This value is therefore used by environmental scientists nowadays to give more accurate measurements about the current levels of emissions in the air.
 
@@ -45,10 +45,12 @@ This analog thermometer can measure temperatures between −55°C and 150°C. It
 </p>
 The LM35 is connected to the PSLab's VCC (5V power supply), CH1 (analog input to read voltages in range [-16 V, +16 V]) and GND (ground).
 
-## Connecting the Sensors
+## Sensor Connections
 
-The sensors are linked to the PSLab with reverse polarity protected connectors, such as the [qwiic connector](https://www.sparkfun.com/qwiic) forI²C sensors.
-Those mechanisms enable the user to exchange broken sensors, without the need of unsoldering the jumper cables directly from the PSLab.
+The sensors are linked to the PSLab with reverse polarity protected connectors,
+to enable the user to exchange sensors, without the need of unsoldering the jumper cables directly from the PSLab.
+In particular, [qwiic connectors](https://www.sparkfun.com/qwiic) were used for the I²C sensors,
+as well as regular 3 pin connectors for the analogue sensors.
 
 The connecting cables are color coded as follows:
 
@@ -57,6 +59,10 @@ The connecting cables are color coded as follows:
 |      **qwiic**      |   red   |  black |        | blue | yellow |
 | **3 pin to sensor** |   red   |  brown | yellow |      |        |
 |  **3 pin to board** |   red   |  black |  brown |      |        |
+
+Those connectors are then attached to the sensors by about 50cm long cables,
+making it for example possible to use the sensor in a climate chamber, while
+keeping the box itself outside of it.
 
 In order to make the sensors as water and temperature resistant as possible, their PCBs are covered with conformal coating
 and all pin connections are enclosed in, mostly glue coated, shrink tubing.
