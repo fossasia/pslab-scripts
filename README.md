@@ -59,7 +59,7 @@ Before using the devices in an own network, a one time setup is needed.
 Once this is done, for every following usage, please directly jump to the [basic usage](#basic-usage) section.
 
 Both, the OSC messages and the CSV file, of the measurement can be retrieved via WiFi.
-Currently, the devices are connected to a dummy WiFi Hotspot with the credentials `myHotspot` as the SSID and `password123"`as the password.
+Currently, the devices are connected to a dummy WiFi Hotspot with the credentials `myHotspot` as the SSID and `password123` as the password.
 Thus, for basic testing, one can just open a Hotspot with these details on a Phone/PC, the devices will automatically connect and the measurement data can be obtained.
 
 However, for more extensive usage, it is obviously more convenient to connect the PSLab Sensor Boxes to the buildings usual WiFi.
